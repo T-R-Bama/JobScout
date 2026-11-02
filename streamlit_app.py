@@ -4,15 +4,25 @@ Lancer en local :  .venv/bin/streamlit run streamlit_app.py
 """
 
 import json
+import os
 import re
 import time
 from pathlib import Path
 
 import streamlit as st
 
-from agent import config, outils
-from agent.boucle import lancer_agent
-from agent.modele import Modele
+# Sur Streamlit Cloud, les clés sont dans les secrets de l'app : on les copie dans
+# l'environnement avant de charger la configuration (en local, c'est le fichier .env).
+try:
+    for cle in ("GROQ_API_KEY", "ADZUNA_APP_ID", "ADZUNA_APP_KEY"):
+        if cle in st.secrets and not os.getenv(cle):
+            os.environ[cle] = str(st.secrets[cle])
+except Exception:  # pas de fichier de secrets en local
+    pass
+
+from agent import config, outils  # noqa: E402
+from agent.boucle import lancer_agent  # noqa: E402
+from agent.modele import Modele  # noqa: E402
 
 CV_EXEMPLE = Path(__file__).parent / "evaluation" / "cv_test.md"
 
@@ -28,6 +38,10 @@ SUGGESTIONS = {
 }
 
 st.set_page_config(page_title="Veille d'offres d'emploi", page_icon=":material/work:")
+
+if not config.GROQ_API_KEY and not config.CV_PATH.exists():  # démo en ligne sans clé
+    st.error("Ajoute `GROQ_API_KEY` dans les secrets de l'app (Manage app → Settings → Secrets).",
+             title="Clé Groq manquante")
 
 if "messages" not in st.session_state:
     st.session_state.messages = []  # {"role", "content", "etapes", "modele"}
