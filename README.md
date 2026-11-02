@@ -5,7 +5,9 @@ Il décide lui-même quels outils appeler et dans quel ordre. La boucle de l'age
 codée à la main, sans framework : le modèle choisit un outil, le programme l'exécute,
 renvoie le résultat au modèle, et ainsi de suite jusqu'à la réponse finale.
 
-> Projet en cours de construction. Étape actuelle : agent fonctionnel en ligne de commande et dans une interface web Streamlit (en local), avec une évaluation chiffrée.
+**Démo en ligne : https://jobscout-otytwrguugq34laub2evrt.streamlit.app** (avec un CV d'exemple, ou ton propre CV en PDF)
+
+> Projet en cours de construction. Étape actuelle : agent fonctionnel en ligne de commande et dans une interface web Streamlit, avec démo en ligne, avec une évaluation chiffrée.
 
 ## Exemple
 
@@ -168,7 +170,7 @@ streamlit_app.py  # interface web
 - [x] Secours Ollama
 - [x] Source Adzuna (activée par les clés ; à tester avec de vraies clés)
 - [x] Interface Streamlit
-- [ ] Démo en ligne (Streamlit Community Cloud)
+- [x] Démo en ligne (Streamlit Community Cloud)
 - [x] Évaluation chiffrée (outil de recherche + agent complet avec Ollama)
 - [ ] Évaluation complète avec Groq (quota quotidien gratuit)
 - [x] Garde-fou qui vérifie les liens de la réponse finale
