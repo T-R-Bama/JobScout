@@ -168,6 +168,7 @@ if question:
         etapes = []
         modele = st.session_state.modele
         modele.fournisseur = "groq"  # chaque demande repart de Groq
+        modele.erreur_groq = ""
         debut = time.time()
         with st.status(":shimmer[L'agent travaille… (1 à 3 minutes avec le modèle gratuit)]", type="compact", expanded=True) as statut:
             def suivre(etape: dict) -> None:
@@ -187,7 +188,8 @@ if question:
         if erreur:
             st.error("Le modèle gratuit est saturé ou indisponible pour le moment. Réessaie dans quelques minutes.",
                      title="Pas de réponse")
-            st.caption(f"Détail technique : {erreur.__class__.__name__}")
+            raison = modele.erreur_groq or f"{erreur.__class__.__name__}: {erreur}"
+            st.caption(f"Détail technique : {raison[:300]}")
             st.session_state.messages.pop()  # on retire la question restée sans réponse
         else:
             st.markdown(adoucir_titres(reponse))

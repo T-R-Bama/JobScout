@@ -79,6 +79,7 @@ class Modele:
     def __init__(self, fournisseur: str = "groq"):
         self.fournisseur = fournisseur if config.GROQ_API_KEY else "ollama"
         self.tokens = 0  # total consommé, utile pour suivre les limites de Groq
+        self.erreur_groq = ""  # raison de la dernière bascule sur Ollama, pour l'interface
 
     @property
     def nom(self) -> str:
@@ -99,6 +100,7 @@ class Modele:
                 except BadRequestError as erreur:
                     # Raté ponctuel du modèle (ex. nom d'outil mal écrit) : on réessaie.
                     if "tool_use_failed" not in str(erreur) or essai == 2:
+                        self.erreur_groq = str(erreur)
                         print(f"  ⚠️  Groq a refusé la requête ({erreur}), bascule sur Ollama.")
                         break
                     print("  🔁 Appel d'outil mal formé par le modèle, nouvel essai.")
@@ -106,11 +108,13 @@ class Modele:
                     # Limite de tokens par minute : on attend le délai indiqué par Groq.
                     attente = float(erreur.response.headers.get("retry-after", 10))
                     if essai == 2 or attente > ATTENTE_MAX_SECONDES:
+                        self.erreur_groq = f"limite de Groq atteinte, réessayer dans {attente:.0f} s"
                         print("  ⚠️  Limite Groq atteinte, bascule sur Ollama.")
                         break
                     print(f"  ⏳ Limite Groq atteinte, nouvel essai dans {attente:.0f} s.")
                     time.sleep(attente)
                 except Exception as erreur:
+                    self.erreur_groq = f"{erreur.__class__.__name__}: {erreur}"
                     print(f"  ⚠️  Groq indisponible ({erreur}), bascule sur Ollama.")
                     break
             self.fournisseur = "ollama"
