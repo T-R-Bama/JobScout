@@ -1,0 +1,21 @@
+# Environnement Python
+.venv/
+__pycache__/
+*.pyc
+
+# Secrets (ne jamais publier)
+.env
+.streamlit/secrets.toml
+
+# Données personnelles (ton CV)
+data/*.pdf
+
+# Divers
+.DS_Store
+
+# Cache des offres téléchargées
+data/cache/
+
+# Offres figées pour l'évaluation (conditions d'utilisation de Remotive : pas de republication)
+evaluation/offres_figees/
+.claude/

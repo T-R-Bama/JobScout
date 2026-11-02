@@ -1,0 +1,349 @@
+{
+  "label": "ollama-reflexion-avant",
+  "modele": "ollama · qwen3:8b (mode réflexion)",
+  "resultats": [
+    {
+      "id": "dev-python-france",
+      "question": "Trouve des offres de développeur Python en France.",
+      "reponse": "Voici les offres de développeur Python trouvées en France :\n\n1. **[ VO2 FORCE ] - Développeur(se) IA / AI Engineer**  \n   *VO2 Group* - Paris, France  \n   [Lire l'annonce](https://www.arbeitnow.fr/jobs/companies/vo2-group/vo2-force-developpeurse-ia-ai-engineer-paris-france-266086)  \n   **Source** : Arbeitnow  \n   *Développement d'outils IA/ML en Python, avec des projets en cloud et analyse de données. Exige expérience en machine learning et frameworks comme TensorFlow/PyTorch.*\n\n2. **Senior Data Engineer - Real time analytics**  \n   *Aircall* - France Remote (possible télétravail)  \n   [Lire l'annonce](https://www.arbeitnow.fr/jobs/companies/aircall/remote-senior-data-engineer-real-time-analytics-489321)  \n   **Source** : Arbeitnow  \n   *Implémentation de pipelines ETL en Python, optimisation de données en temps réel. Privilégie les compétences en Big Data et cloud.*\n\nLes autres offres (commercial, ingénieur EDA, post-doctorat) ne correspondent pas directement à \"développeur Python\". Voulez-vous que je détaille l'une de ces offres ou que je cherche avec d'autres mots-clés (ex. \"software engineer\", \"data scientist\") ? Si vous souhaitez ajuster votre recherche, je peux aussi analyser votre CV pour mieux cibler les profils adaptés.",
+      "erreur": "",
+      "appels": [
+        {
+          "nom": "search_jobs",
+          "arguments": {
+            "lieu": "France",
+            "mots_cles": "python developer",
+            "max_resultats": 5
+          }
+        }
+      ],
+      "liens": [
+        "https://www.arbeitnow.fr/jobs/companies/vo2-group/vo2-force-developpeurse-ia-ai-engineer-paris-france-266086",
+        "https://www.arbeitnow.fr/jobs/companies/aircall/remote-senior-data-engineer-real-time-analytics-489321"
+      ],
+      "offres_citees": [
+        "arbeitnow:vo2-force-developpeurse-ia-ai-engineer-paris-france-266086",
+        "arbeitnow:remote-senior-data-engineer-real-time-analytics-489321"
+      ],
+      "duree_s": 27.0,
+      "tokens": 3448,
+      "recherches": 1,
+      "appels_outils": 1,
+      "fournisseur_final": "ollama",
+      "repond": true,
+      "cv_bien_utilise": true,
+      "detail_lu": null,
+      "liens_tous_valides": true,
+      "contrainte_respectee": true,
+      "offre_attendue_trouvee": true,
+      "honnete_si_aucune_offre": null,
+      "source_citee": true
+    },
+    {
+      "id": "data-scientist-paris",
+      "question": "Je cherche un poste de data scientist à Paris.",
+      "reponse": "### Offres correspondant à votre profil (CV lu) :\n\n#### 1. **Data Scientist Internship**  \n**Pigment** · Paris  \n[Annonce](https://www.arbeitnow.fr/jobs/companies/pigment/data-scientist-internship-paris-490344)  \n**Source** : Arbeitnow  \n**Résumé** : Stage de data scientist dans un environnement innovant, avec des projets en IA et analyse de données. Idéal pour un premier emploi ou une alternance.  \n**Score adéquation** : 75/100  \n- **Points forts** : Correspond à votre recherche de premier poste, compétences en Python et IA (RAG, LLM) alignées avec les exigences.  \n- **Manques** : Peut nécessiter une expérience légère en analyse de données structurée (SQL, Pandas).  \n\n---\n\n#### 2. **Data Scientist | Projets Pricing & Segmentation – Practice IA MARGO**  \n**MARGO** · Paris  \n[Annonce](https://www.arbeitnow.fr/jobs/companies/margo/data-scientist-projets-pricing-segmentation-practice-ia-margo-paris-338953)  \n**Source** : Arbeitnow  \n**Résumé** : Poste de data scientist en IA, avec des projets en pricing et segmentation. Recherche un profil junior avec des compétences en Python et ML.  \n**Score adéquation** : 68/100  \n- **Points forts** : Vos compétences en scikit-learn, Pandas et API LLM (OpenAI) correspondent aux exigences.  \n- **Manques** : Peut exiger une expérience en optimisation de pricing (domaine peu couvert dans votre CV).  \n\n---\n\n### Recommandation :  \nL’**internship chez Pigment** est le meilleur match pour votre profil junior. Si vous souhaitez viser un poste plus technique, le **data scientist chez MARGO** pourrait être pertinent, mais vous devrez renforcer votre expérience en analyse de données structurée. Vérifiez les critères d’admission pour les stages (ex. niveau d’études, disponibilité).",
+      "erreur": "",
+      "appels": [
+        {
+          "nom": "read_cv",
+          "arguments": {}
+        },
+        {
+          "nom": "search_jobs",
+          "arguments": {
+            "mots_cles": "data scientist",
+            "lieu": "Paris",
+            "max_resultats": 5
+          }
+        }
+      ],
+      "liens": [
+        "https://www.arbeitnow.fr/jobs/companies/pigment/data-scientist-internship-paris-490344",
+        "https://www.arbeitnow.fr/jobs/companies/margo/data-scientist-projets-pricing-segmentation-practice-ia-margo-paris-338953"
+      ],
+      "offres_citees": [
+        "arbeitnow:data-scientist-internship-paris-490344",
+        "arbeitnow:data-scientist-projets-pricing-segmentation-practice-ia-margo-paris-338953"
+      ],
+      "duree_s": 52.0,
+      "tokens": 5941,
+      "recherches": 1,
+      "appels_outils": 2,
+      "fournisseur_final": "ollama",
+      "repond": true,
+      "cv_bien_utilise": false,
+      "detail_lu": null,
+      "liens_tous_valides": true,
+      "contrainte_respectee": true,
+      "offre_attendue_trouvee": true,
+      "honnete_si_aucune_offre": null,
+      "source_citee": true
+    },
+    {
+      "id": "product-manager-berlin",
+      "question": "Quelles offres de product manager y a-t-il à Berlin ?",
+      "reponse": "Voici les offres de **product manager** ou liées à ce profil trouvées à **Berlin** :\n\n---\n\n### 1. **Associate Product Manager (m/f/d)**  \n**Entreprise** : Superchat  \n**Lieu** : Berlin, Berlin  \n**Source** : Arbeitnow  \n[Lien](https://www.arbeitnow.com/jobs/companies/superchat/associate-product-manager-berlin-berlin-32005)  \n**Résumé** : Poste de product manager junior pour une startup de chat. Recherche un candidat avec expérience en gestion de produits et en collaboration avec les équipes techniques.  \n\n---\n\n### 2. **Senior Customer Success Manager (m/f/d)**  \n**Entreprise** : Boardwise GmbH  \n**Lieu** : Berlin (bureau, possibilité de télétravail)  \n**Source** : Arbeitnow  \n[Lien](https://www.arbeitnow.com/jobs/companies/boardwise-gmbh/senior-customer-success-manager-berlin-474292)  \n**Résumé** : Poste de gestion de la réussite client avec une forte dimension produit. Recherche un profil expérimenté en gestion de relations clients et optimisation de l'expérience utilisateur.  \n\n---\n\n### 3. **Low-touch Customer Success Manager (Remote - EMEA)**  \n**Entreprise** : N8N  \n**Lieu** : Berlin (bureau, pas de télétravail)  \n**Source** : Arbeitnow  \n[Lien](https://www.arbeitnow.com/jobs/companies/n8n/low-touch-customer-success-manager-remote-emea-berlin-44390)  \n**Résumé** : Poste de gestion de clients à distance, avec une touche de gestion de produits. Idéal pour un candidat souhaitant combiner clientèle et optimisation de produits.  \n\n---\n\n### 4. **Senior Product Design Engineer**  \n**Entreprise** : Rohlik  \n**Lieu** : Berlin, Germany  \n**Source** : Arbeitnow  \n[Lien](https://www.arbeitnow.com/jobs/companies/rohlik/senior-product-design-engineer-berlin-214302)  \n**Résumé** : Poste de designer produit senior, combinant design et ingénierie. Recherche un profil avec expertise en conception de produits et en collaboration interdisciplinaire.  \n\n---\n\n### 5. **(Senior) Account Manager - Nachhaltigkeit**  \n**Entreprise** : Rootglobal  \n**Lieu** : Berlin  \n**Source** : Arbeitnow  \n[Lien](https://www.arbeitnow.com/jobs/companies/rootglobal/senior-account-manager-nachhaltigkeit-berlin-153902)  \n**Résumé** : Poste de manager de comptes avec focus sur la durabilité. Recherche un candidat avec expérience en gestion de comptes et en stratégies de développement durable.  \n\n---\n\n**Recommandation** : Les offres 1 et 2 sont les plus proches du profil de **product manager**. Les autres sont liées à des rôles de gestion de produits ou de clientèle, qui peuvent être pertinentes si vous êtes ouvert à des profils adjacent. Voulez-vous que je vous aide à affiner les recherches en fonction de vos compétences (ex. expérience en startup, gestion d'équipes, etc.) ?",
+      "erreur": "",
+      "appels": [
+        {
+          "nom": "search_jobs",
+          "arguments": {
+            "max_resultats": 5,
+            "mots_cles": "product manager",
+            "lieu": "Berlin",
+            "teletravail_seulement": false
+          }
+        }
+      ],
+      "liens": [
+        "https://www.arbeitnow.com/jobs/companies/superchat/associate-product-manager-berlin-berlin-32005",
+        "https://www.arbeitnow.com/jobs/companies/boardwise-gmbh/senior-customer-success-manager-berlin-474292",
+        "https://www.arbeitnow.com/jobs/companies/n8n/low-touch-customer-success-manager-remote-emea-berlin-44390",
+        "https://www.arbeitnow.com/jobs/companies/rohlik/senior-product-design-engineer-berlin-214302",
+        "https://www.arbeitnow.com/jobs/companies/rootglobal/senior-account-manager-nachhaltigkeit-berlin-153902"
+      ],
+      "offres_citees": [
+        "arbeitnow:associate-product-manager-berlin-berlin-32005",
+        "arbeitnow:senior-customer-success-manager-berlin-474292",
+        "arbeitnow:low-touch-customer-success-manager-remote-emea-berlin-44390",
+        "arbeitnow:senior-product-design-engineer-berlin-214302",
+        "arbeitnow:senior-account-manager-nachhaltigkeit-berlin-153902"
+      ],
+      "duree_s": 33.3,
+      "tokens": 3659,
+      "recherches": 1,
+      "appels_outils": 1,
+      "fournisseur_final": "ollama",
+      "repond": true,
+      "cv_bien_utilise": true,
+      "detail_lu": null,
+      "liens_tous_valides": true,
+      "contrainte_respectee": true,
+      "offre_attendue_trouvee": true,
+      "honnete_si_aucune_offre": null,
+      "source_citee": true
+    },
+    {
+      "id": "react-teletravail",
+      "question": "Trouve des offres de développeur React en télétravail.",
+      "reponse": "Voici des offres de développeur React en télétravail :\n\n1. **Senior React Full-stack Developer**  \n   *Lemon.io* (Europe, USA, Canada, APAC)  \n   [Lien](https://remotive.com/remote-jobs/software-development/senior-react-full-stack-developer-2091133)  \n   *Source : Remotive*  \n   Développeur full-stack senior pour un logiciel de gestion de tâches. Recherche un expert en React, Node.js et cloud. Salaire compétitif.  \n\n2. **Full-Stack Developer**  \n   *Fluence International, Inc.* (Monde)  \n   [Lien](https://remotive.com/remote-jobs/software-development/full-stack-developer-2091165)  \n   *Source : Remotive*  \n   Projet international de SaaS. Besoin de développeur polyvalent en React, Python et cloud. Flexibilité horaire.  \n\n3. **Senior Back-end Developer**  \n   *Lemon.io* (Europe, USA, Canada, etc.)  \n   [Lien](https://remotive.com/remote-jobs/software-development/senior-back-end-developer-2091135)  \n   *Source : Remotive*  \n   Poste de senior en back-end (Node.js, Python) pour un startup tech. Possibilité de remote.  \n\n4. **Senior Full Stack Developer - Deepdesk**  \n   *AnywhereNow* (Remote)  \n   [Lien](https://www.arbeitnow.nl/jobs/companies/anywherenow/remote-senior-full-stack-developer-deepdesk-rotterdam-346552)  \n   *Source : Arbeitnow*  \n   Développement d'une plateforme de gestion d'équipes. Technos : React, Java, cloud.  \n\n5. **React Native Engineer**  \n   *Cara Care* (Berlin, Allemagne)  \n   [Lien](https://www.arbeitnow.com/jobs/companies/cara-care/remote-senior-react-native-engineer-based-in-germany-berlin-388773)  \n   *Source : Arbeitnow*  \n   Développement d'applications mobiles en React Native. Poste en remote avec base à Berlin.  \n\n**Recommandation** : Les offres de Remotive sont souvent bien rémunérées, mais vérifiez les critères techniques (ex. React.js, Node.js). Si vous souhaitez un alignement avec votre profil, je peux analyser votre CV pour un score d'adéquation.",
+      "erreur": "",
+      "appels": [
+        {
+          "nom": "search_jobs",
+          "arguments": {
+            "mots_cles": "React developer",
+            "teletravail_seulement": true,
+            "max_resultats": 5
+          }
+        }
+      ],
+      "liens": [
+        "https://remotive.com/remote-jobs/software-development/senior-react-full-stack-developer-2091133",
+        "https://remotive.com/remote-jobs/software-development/full-stack-developer-2091165",
+        "https://remotive.com/remote-jobs/software-development/senior-back-end-developer-2091135",
+        "https://www.arbeitnow.nl/jobs/companies/anywherenow/remote-senior-full-stack-developer-deepdesk-rotterdam-346552",
+        "https://www.arbeitnow.com/jobs/companies/cara-care/remote-senior-react-native-engineer-based-in-germany-berlin-388773"
+      ],
+      "offres_citees": [
+        "remotive:2091133",
+        "remotive:2091165",
+        "remotive:2091135",
+        "arbeitnow:remote-senior-full-stack-developer-deepdesk-rotterdam-346552",
+        "arbeitnow:remote-senior-react-native-engineer-based-in-germany-berlin-388773"
+      ],
+      "duree_s": 29.7,
+      "tokens": 3467,
+      "recherches": 1,
+      "appels_outils": 1,
+      "fournisseur_final": "ollama",
+      "repond": true,
+      "cv_bien_utilise": true,
+      "detail_lu": null,
+      "liens_tous_valides": true,
+      "contrainte_respectee": true,
+      "offre_attendue_trouvee": true,
+      "honnete_si_aucune_offre": null,
+      "source_citee": true
+    },
+    {
+      "id": "devops-royaume-uni",
+      "question": "Trouve des offres de DevOps ou de platform engineer au Royaume-Uni.",
+      "reponse": "Aucune offre n'a été trouvée avec les mots-clés \"DevOps\", \"Platform Engineer\" ou leurs variantes dans le Royaume-Uni. Les sources (Arbeitnow, Remotive, Adzuna) ne renvoient pas de résultats pour ces termes dans ce lieu. \n\n**Recommandation** :  \n- Élargissez les mots-clés (ex. \"IT Engineer\", \"Systems Engineer\", \"Cloud Infrastructure\")  \n- Vérifiez si le télétravail est accepté (ajoutez `teletravail_seulement: true`)  \n- Considérez des régions voisines (ex. \"Europe\") ou des secteurs spécifiques (ex. \"Cloud Computing\").  \n\nSouhaitez-vous que je teste ces nouvelles options ?",
+      "erreur": "",
+      "appels": [
+        {
+          "nom": "search_jobs",
+          "arguments": {
+            "lieu": "Royaume-Uni",
+            "mots_cles": "DevOps Platform Engineer",
+            "max_resultats": 10
+          }
+        },
+        {
+          "nom": "search_jobs",
+          "arguments": {
+            "lieu": "Royaume-Uni",
+            "max_resultats": 10,
+            "mots_cles": "DevOps Engineer"
+          }
+        },
+        {
+          "nom": "search_jobs",
+          "arguments": {
+            "mots_cles": "Platform Engineer",
+            "lieu": "Royaume-Uni",
+            "max_resultats": 10
+          }
+        }
+      ],
+      "liens": [],
+      "offres_citees": [],
+      "duree_s": 25.8,
+      "tokens": 4763,
+      "recherches": 3,
+      "appels_outils": 3,
+      "fournisseur_final": "ollama",
+      "repond": true,
+      "cv_bien_utilise": true,
+      "detail_lu": null,
+      "liens_tous_valides": true,
+      "contrainte_respectee": null,
+      "offre_attendue_trouvee": false,
+      "honnete_si_aucune_offre": null,
+      "source_citee": null
+    },
+    {
+      "id": "cv-france",
+      "question": "Trouve 3 offres en France qui correspondent à mon CV.",
+      "reponse": "### Offres d'emploi correspondant à votre CV\n\n1. **[ VO2 FORCE ] - Développeur(se) IA / AI Engineer**  \n   *VO2 Group* · Paris, France  \n   [Lire l'offre](https://www.arbeitnow.fr/jobs/companies/vo2-group/vo2-force-developpeurse-ia-ai-engineer-paris-france-266086)  \n   **Source** : Arbeitnow  \n   **Résumé** : Poste de développeur IA en Python, avec des compétences en traitement de données et modélisation. Recherche un·e junior avec des bases en machine learning et API LLM.  \n\n2. **Alternance - Commercial·e / Sales / Business Developer**  \n   *Matera* · Paris, Île-de-France, France  \n   [Lire l'offre](https://www.arbeitnow.fr/jobs/companies/matera/alternance-commerciale-sales-business-developer-paris-314286)  \n   **Source** : Arbeitnow  \n   **Résumé** : Alternance en commerce avec des responsabilités en gestion de projets. Pas adapté à votre profil technique.  \n\n3. **Senior Data Engineer - Real time analytics**  \n   *Aircall* · France Remote  \n   [Lire l'offre](https://www.arbeitnow.fr/jobs/companies/aircall/remote-senior-data-engineer-real-time-analytics-489321)  \n   **Source** : Arbeitnow  \n   **Résumé** : Poste de data engineer senior (niveau expérience trop élevé pour votre profil junior).  \n\n---\n\n### Analyse de votre CV  \n**Score d'adéquation** : 75/100  \n**Points forts** :  \n- Expérience en Python, Django, FastAPI, et IA (LLM, RAG).  \n- Projets concrets (chatbot RAG, API REST).  \n- Formation en cours (bootcamp Python).  \n\n**Compétences manquantes** :  \n- Expérience professionnelle en développement (0 mois).  \n- Connaissances en cloud ou DevOps (non mentionnées).  \n\n---\n\n### Recommandation  \nL'offre de **VO2 Group** correspond le mieux à votre profil. Pour mieux cibler, ajoutez des mots-clés comme *\"junior developer\"* ou *\"apprenti Python\"* dans la recherche. Vérifiez aussi les offres de stages ou d'alternance sur **Adzuna** en France.",
+      "erreur": "",
+      "appels": [
+        {
+          "nom": "read_cv",
+          "arguments": {}
+        },
+        {
+          "nom": "search_jobs",
+          "arguments": {
+            "teletravail_seulement": false,
+            "max_resultats": 3,
+            "mots_cles": "Python developer",
+            "lieu": "France"
+          }
+        }
+      ],
+      "liens": [
+        "https://www.arbeitnow.fr/jobs/companies/vo2-group/vo2-force-developpeurse-ia-ai-engineer-paris-france-266086",
+        "https://www.arbeitnow.fr/jobs/companies/matera/alternance-commerciale-sales-business-developer-paris-314286",
+        "https://www.arbeitnow.fr/jobs/companies/aircall/remote-senior-data-engineer-real-time-analytics-489321"
+      ],
+      "offres_citees": [
+        "arbeitnow:vo2-force-developpeurse-ia-ai-engineer-paris-france-266086",
+        "arbeitnow:alternance-commerciale-sales-business-developer-paris-314286",
+        "arbeitnow:remote-senior-data-engineer-real-time-analytics-489321"
+      ],
+      "duree_s": 51.4,
+      "tokens": 5714,
+      "recherches": 1,
+      "appels_outils": 2,
+      "fournisseur_final": "ollama",
+      "repond": true,
+      "cv_bien_utilise": true,
+      "detail_lu": null,
+      "liens_tous_valides": true,
+      "contrainte_respectee": true,
+      "offre_attendue_trouvee": true,
+      "honnete_si_aucune_offre": null,
+      "source_citee": true
+    },
+    {
+      "id": "cv-offre-precise",
+      "question": "L'offre « Junior AI Consultant » à Paris correspond-elle à mon profil ?",
+      "reponse": "**Offre « Junior AI Consultant » à Paris**  \n- **Entreprise** : Pigment (source : Arbeitnow)  \n- **Lieu** : Paris  \n- **Lien** : [Junior AI Consultant](https://www.arbeitnow.fr/jobs/companies/pigment/junior-ai-consultant-paris-64006)  \n\n**Résumé** :  \nCette offre propose un poste de Junior AI Consultant à Paris, avec une date de fermeture le 31 octobre 2026. L’entreprise Pigment recherche un profil junior avec des compétences en intelligence artificielle, notamment en API de LLM (OpenAI, Groq), RAG, ou LangChain. Le poste semble orienté vers des projets de conseil ou de développement IA, avec une forte implication technique.\n\n---\n\n**Comparaison avec ton profil (CV lu)**  \n- **Score d’adéquation** : 75/100  \n- **Points forts** :  \n  - Expérience en IA (API LLM, RAG, LangChain) et projets concrets (chatbot RAG, API FastAPI).  \n  - Compétences en Python, FastAPI, et outils liés à l’IA (ChromaDB, Streamlit).  \n- **Compétences manquantes** :  \n  - Expérience en conseil ou en gestion de projets IA (la description mentionne des tâches de conseil).  \n  - Connaissance de frameworks spécifiques à la consultation (ex. Power BI, Tableau avancé).  \n\n---\n\n**Recommandation** :  \nL’offre de Pigment correspond **partiellement** à ton profil, notamment pour les compétences en IA. Cependant, le poste semble plus orienté vers le conseil que vers le développement technique. Si tu es ouverte à des rôles mixtes (développement + conseil), cette offre est pertinente. Sinon, tu pourrais explorer des mots-clés comme **\"AI Developer\"** ou **\"Machine Learning Engineer\"** pour des offres plus techniques.",
+      "erreur": "",
+      "appels": [
+        {
+          "nom": "read_cv",
+          "arguments": {}
+        },
+        {
+          "nom": "search_jobs",
+          "arguments": {
+            "mots_cles": "Junior AI Consultant",
+            "lieu": "Paris",
+            "max_resultats": 3
+          }
+        }
+      ],
+      "liens": [
+        "https://www.arbeitnow.fr/jobs/companies/pigment/junior-ai-consultant-paris-64006"
+      ],
+      "offres_citees": [
+        "arbeitnow:junior-ai-consultant-paris-64006"
+      ],
+      "duree_s": 28.6,
+      "tokens": 3649,
+      "recherches": 1,
+      "appels_outils": 2,
+      "fournisseur_final": "ollama",
+      "repond": true,
+      "cv_bien_utilise": true,
+      "detail_lu": false,
+      "liens_tous_valides": true,
+      "contrainte_respectee": true,
+      "offre_attendue_trouvee": true,
+      "honnete_si_aucune_offre": null,
+      "source_citee": true
+    },
+    {
+      "id": "boulanger-marseille",
+      "question": "Trouve des offres de boulanger à Marseille.",
+      "reponse": "Aucune offre trouvée avec les mots-clés \"pâtissier\", \"boulangerie\" ou \"boulanger\" à Marseille. Les sources (Arbeitnow, Remotive, Adzuna) ne renvoient pas de résultats pour ce profil. \n\n**Suggestions :**\n1. Vérifier des mots-clés alternatifs comme \"chef de cuisine\", \"boulanger pâtissier\" ou \"pastry chef\".\n2. Considérer des offres en télétravail (si applicable) en ajoutant `teletravail_seulement=true`.\n3. Contacter directement des boulangeries/marchés de Marseille via leur site web ou les réseaux sociaux.\n\nAvec le CV lu, voici une recommandation :  \n👉 Vos compétences en gestion de projet (ex. tableau de bord des ventes) et en outils (Git, Docker) pourraient être valorisées dans un rôle de gestion de production ou de logistique en boulangerie. À suivre ! 🥐",
+      "erreur": "",
+      "appels": [
+        {
+          "nom": "read_cv",
+          "arguments": {}
+        },
+        {
+          "nom": "search_jobs",
+          "arguments": {
+            "mots_cles": "baker",
+            "lieu": "Marseille"
+          }
+        },
+        {
+          "nom": "search_jobs",
+          "arguments": {
+            "mots_cles": "boulanger",
+            "lieu": "Marseille"
+          }
+        },
+        {
+          "nom": "search_jobs",
+          "arguments": {
+            "lieu": "Marseille",
+            "mots_cles": "pâtissier"
+          }
+        }
+      ],
+      "liens": [],
+      "offres_citees": [],
+      "duree_s": 42.3,
+      "tokens": 7512,
+      "recherches": 3,
+      "appels_outils": 4,
+      "fournisseur_final": "ollama",
+      "repond": true,
+      "cv_bien_utilise": false,
+      "detail_lu": null,
+      "liens_tous_valides": true,
+      "contrainte_respectee": null,
+      "offre_attendue_trouvee": null,
+      "honnete_si_aucune_offre": true,
+      "source_citee": null
+    }
+  ]
+}

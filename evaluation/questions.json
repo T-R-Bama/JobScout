@@ -1,0 +1,120 @@
+[
+  {
+    "id": "dev-python-france",
+    "question": "Trouve des offres de développeur Python en France.",
+    "doit_lire_cv": false,
+    "pays": "France",
+    "offres_attendues": [
+      "arbeitnow:developpeur-senior-python-practice-se-margo-paris-235793",
+      "arbeitnow:developpeur-full-stack-practice-se-margo-paris-238453",
+      "arbeitnow:vo2-force-developpeurse-ia-ai-engineer-paris-france-266086",
+      "arbeitnow:internship-software-engineer-back-fullstack-paris-403086",
+      "arbeitnow:software-engineer-intern-paris-405112"
+    ],
+    "recherche_type": {
+      "mots_cles": "python developer",
+      "lieu": "France"
+    }
+  },
+  {
+    "id": "data-scientist-paris",
+    "question": "Je cherche un poste de data scientist à Paris.",
+    "doit_lire_cv": false,
+    "ville": "Paris",
+    "offres_attendues": [
+      "arbeitnow:data-scientist-internship-paris-490344",
+      "arbeitnow:data-scientist-projets-pricing-segmentation-practice-ia-margo-paris-338953"
+    ],
+    "recherche_type": {
+      "mots_cles": "data scientist",
+      "lieu": "Paris"
+    }
+  },
+  {
+    "id": "product-manager-berlin",
+    "question": "Quelles offres de product manager y a-t-il à Berlin ?",
+    "doit_lire_cv": false,
+    "ville": "Berlin",
+    "offres_attendues": [
+      "arbeitnow:associate-product-manager-berlin-berlin-32005",
+      "arbeitnow:product-owner-mwd-berlin-131643"
+    ],
+    "recherche_type": {
+      "mots_cles": "product manager",
+      "lieu": "Berlin"
+    }
+  },
+  {
+    "id": "react-teletravail",
+    "question": "Trouve des offres de développeur React en télétravail.",
+    "doit_lire_cv": false,
+    "teletravail": true,
+    "offres_attendues": [
+      "remotive:2091133",
+      "remotive:2091165",
+      "arbeitnow:remote-senior-react-native-engineer-based-in-germany-berlin-388773",
+      "arbeitnow:remote-senior-react-native-engineer-based-in-germany-164217"
+    ],
+    "recherche_type": {
+      "mots_cles": "react developer",
+      "teletravail_seulement": true
+    }
+  },
+  {
+    "id": "devops-royaume-uni",
+    "question": "Trouve des offres de DevOps ou de platform engineer au Royaume-Uni.",
+    "doit_lire_cv": false,
+    "pays": "Royaume-Uni",
+    "offres_attendues": [
+      "arbeitnow:senior-platform-engineer-london-260230"
+    ],
+    "recherche_type": {
+      "mots_cles": "devops platform engineer",
+      "lieu": "Royaume-Uni"
+    }
+  },
+  {
+    "id": "cv-france",
+    "question": "Trouve 3 offres en France qui correspondent à mon CV.",
+    "doit_lire_cv": true,
+    "pays": "France",
+    "offres_attendues": [
+      "arbeitnow:internship-software-engineer-back-fullstack-paris-403086",
+      "arbeitnow:software-engineer-intern-paris-405112",
+      "arbeitnow:junior-ai-consultant-paris-64006",
+      "arbeitnow:developpeur-full-stack-practice-se-margo-paris-238453",
+      "arbeitnow:vo2-force-developpeurse-ia-ai-engineer-paris-france-266086",
+      "arbeitnow:developpeur-senior-python-practice-se-margo-paris-235793"
+    ],
+    "recherche_type": {
+      "mots_cles": "junior python developer",
+      "lieu": "France"
+    }
+  },
+  {
+    "id": "cv-offre-precise",
+    "question": "L'offre « Junior AI Consultant » à Paris correspond-elle à mon profil ?",
+    "doit_lire_cv": true,
+    "doit_lire_detail": true,
+    "ville": "Paris",
+    "offres_attendues": [
+      "arbeitnow:junior-ai-consultant-paris-64006"
+    ],
+    "recherche_type": {
+      "mots_cles": "junior ai consultant",
+      "lieu": "Paris"
+    }
+  },
+  {
+    "id": "boulanger-marseille",
+    "question": "Trouve des offres de boulanger à Marseille.",
+    "doit_lire_cv": false,
+    "ville": "Marseille",
+    "aucune_offre": true,
+    "offres_attendues": [],
+    "recherche_type": {
+      "mots_cles": "boulanger",
+      "lieu": "Marseille"
+    }
+  }
+]

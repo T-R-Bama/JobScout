@@ -1,0 +1,201 @@
+{
+  "variante": "après correctif",
+  "resultats": [
+    {
+      "id": "dev-python-france",
+      "recherche": {
+        "mots_cles": "python developer",
+        "lieu": "France"
+      },
+      "resultats": [
+        "arbeitnow:developpeur-senior-python-practice-se-margo-paris-235793",
+        "arbeitnow:applied-ai-engineer-ai-for-mistral-paris-22161",
+        "arbeitnow:forward-deployed-engineer-agentic-ai-paris-193607",
+        "arbeitnow:vo2-force-developpeurse-ia-ai-engineer-paris-france-266086",
+        "arbeitnow:senior-data-engineer-cloud-transfo-paris-243467"
+      ],
+      "couverture": [
+        150,
+        150
+      ],
+      "attendue_top5": true,
+      "bon_endroit": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "id": "data-scientist-paris",
+      "recherche": {
+        "mots_cles": "data scientist",
+        "lieu": "Paris"
+      },
+      "resultats": [
+        "arbeitnow:data-scientist-internship-paris-490344",
+        "arbeitnow:data-scientist-projets-pricing-segmentation-practice-ia-margo-paris-338953",
+        "arbeitnow:lead-data-analyst-recouvrement-credit-h-f-paris-fr-166199",
+        "arbeitnow:machine-learning-engineer-practice-ia-margo-paris-362460",
+        "arbeitnow:lead-ia-engineer-practice-ia-margo-paris-256013"
+      ],
+      "couverture": [
+        97,
+        97
+      ],
+      "attendue_top5": true,
+      "bon_endroit": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "id": "product-manager-berlin",
+      "recherche": {
+        "mots_cles": "product manager",
+        "lieu": "Berlin"
+      },
+      "resultats": [
+        "arbeitnow:associate-product-manager-berlin-berlin-32005",
+        "arbeitnow:senior-product-design-engineer-berlin-214302",
+        "arbeitnow:senior-customer-success-manager-berlin-474292",
+        "arbeitnow:low-touch-customer-success-manager-remote-emea-berlin-44390",
+        "arbeitnow:senior-account-manager-nachhaltigkeit-berlin-153902"
+      ],
+      "couverture": [
+        98,
+        98
+      ],
+      "attendue_top5": true,
+      "bon_endroit": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "id": "react-teletravail",
+      "recherche": {
+        "mots_cles": "react developer",
+        "teletravail_seulement": true
+      },
+      "resultats": [
+        "remotive:2091133",
+        "arbeitnow:remote-full-stack-developer-java-react-120706",
+        "remotive:2091165",
+        "remotive:2091135",
+        "arbeitnow:remote-senior-full-stack-developer-deepdesk-rotterdam-346552"
+      ],
+      "couverture": [
+        89,
+        89
+      ],
+      "attendue_top5": true,
+      "bon_endroit": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "id": "devops-royaume-uni",
+      "recherche": {
+        "mots_cles": "devops platform engineer",
+        "lieu": "Royaume-Uni"
+      },
+      "resultats": [
+        "arbeitnow:lead-platform-engineer-manchester-22226",
+        "arbeitnow:senior-platform-engineer-london-260230",
+        "arbeitnow:senior-devsecops-engineer-london-91227",
+        "arbeitnow:lead-data-engineer-london-302886",
+        "arbeitnow:senior-devsecops-engineer-contract-418128"
+      ],
+      "couverture": [
+        150,
+        150
+      ],
+      "attendue_top5": true,
+      "bon_endroit": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "id": "cv-france",
+      "recherche": {
+        "mots_cles": "junior python developer",
+        "lieu": "France"
+      },
+      "resultats": [
+        "arbeitnow:developpeur-senior-python-practice-se-margo-paris-235793",
+        "arbeitnow:applied-ai-engineer-ai-for-mistral-paris-22161",
+        "arbeitnow:forward-deployed-engineer-agentic-ai-paris-193607",
+        "arbeitnow:vo2-force-developpeurse-ia-ai-engineer-paris-france-266086",
+        "arbeitnow:senior-data-engineer-cloud-transfo-paris-243467"
+      ],
+      "couverture": [
+        150,
+        150
+      ],
+      "attendue_top5": true,
+      "bon_endroit": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "id": "cv-offre-precise",
+      "recherche": {
+        "mots_cles": "junior ai consultant",
+        "lieu": "Paris"
+      },
+      "resultats": [
+        "arbeitnow:junior-ai-consultant-paris-64006",
+        "arbeitnow:cdi-junior-digital-data-marketing-consultant-paris-9th-arrondissement-of-paris-75009-paris-466889",
+        "arbeitnow:cdi-junior-digital-data-marketing-consultant-paris-9th-arrondissement-of-paris-75009-paris-38003",
+        "arbeitnow:head-of-product-transformation-consultante-en-organisation-produit-h-f-paris-463459",
+        "arbeitnow:senior-solutions-consultant-paris-la-defense-404753"
+      ],
+      "couverture": [
+        97,
+        97
+      ],
+      "attendue_top5": true,
+      "bon_endroit": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "id": "boulanger-marseille",
+      "recherche": {
+        "mots_cles": "boulanger",
+        "lieu": "Marseille"
+      },
+      "resultats": [],
+      "couverture": [
+        2,
+        2
+      ],
+      "attendue_top5": null,
+      "bon_endroit": []
+    }
+  ]
+}

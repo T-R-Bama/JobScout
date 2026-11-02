@@ -1,0 +1,128 @@
+{
+  "label": "groq-avant",
+  "modele": "groq · openai/gpt-oss-120b",
+  "resultats": [
+    {
+      "id": "dev-python-france",
+      "question": "Trouve des offres de développeur Python en France.",
+      "reponse": "**1. Senior Data Engineer – Real‑time Analytics**  \n- **Entreprise** : Aircall  \n- **Lieu** : France (remote)  \n- **Source** : Arbeitnow  \n- **Lien** : <https://www.arbeitnow.fr/jobs/companies/aircall/remote-senior-data-engineer-real-time-analytics-489321>  \n\n**Résumé** : Aircall, plateforme de communication client en pleine croissance, recherche un Senior Data Engineer pour concevoir et maintenir une plateforme de streaming de données à faible latence. Le poste implique la conception d’architectures, l’optimisation de requêtes SQL et le développement de code propre et scalable en **Python**, Scala et SQL afin de fournir des analyses en temps réel à plus de 22 000 clients.\n\n---\n\n**2. Développeur(se) IA / AI Engineer**  \n- **Entreprise** : VO2 Group  \n- **Lieu** : Paris, France  \n- **Source** : Arbeitnow  \n- **Lien** : <https://www.arbeitnow.fr/jobs/companies/vo2-group/vo2-force-developpeurse-ia-ai-engineer-paris-france-266086>  \n\n**Résumé** : VO2 Group, cabinet de conseil tech, recherche un(e) développeur(se) IA pour un client du secteur du luxe. La mission porte sur la conception et le déploiement de solutions d’IA générative (agents intelligents) en s’appuyant sur **Python**, les frameworks LangChain / LangGraph et l’infrastructure Google Cloud (Gemini Enterprise Agent Platform). Le rôle inclut le développement d’APIs, la sécurisation des accès et l’industrialisation des modèles IA.\n\n---\n\n### Recommandation\nCes deux postes correspondent bien à un profil **développeur Python** recherchant des challenges techniques en France, l’un orienté **big data / streaming** (Aircall) et l’autre vers **IA générative** (VO2). Si vous êtes plus attiré par le traitement de données à grande échelle et le travail en remote, le poste d’Aircall est le plus adapté. En revanche, si vous souhaitez vous spécialiser dans l’IA générative et travailler sur des projets innovants dans le secteur du luxe, l’offre de VO2 Group est la meilleure option.",
+      "erreur": "",
+      "appels": [
+        {
+          "nom": "search_jobs",
+          "arguments": {
+            "lieu": "France",
+            "max_resultats": 5,
+            "mots_cles": "python developer",
+            "teletravail_seulement": false
+          }
+        },
+        {
+          "nom": "search_jobs",
+          "arguments": {
+            "lieu": "France",
+            "max_resultats": 5,
+            "mots_cles": "python engineer",
+            "teletravail_seulement": false
+          }
+        },
+        {
+          "nom": "search_jobs",
+          "arguments": {
+            "lieu": "France",
+            "max_resultats": 10,
+            "mots_cles": "python",
+            "teletravail_seulement": false
+          }
+        },
+        {
+          "nom": "get_job_details",
+          "arguments": {
+            "id_offre": "arbeitnow:remote-senior-data-engineer-real-time-analytics-489321"
+          }
+        },
+        {
+          "nom": "get_job_details",
+          "arguments": {
+            "id_offre": "arbeitnow:vo2-force-developpeurse-ia-ai-engineer-paris-france-266086"
+          }
+        }
+      ],
+      "liens": [
+        "https://www.arbeitnow.fr/jobs/companies/aircall/remote-senior-data-engineer-real-time-analytics-489321",
+        "https://www.arbeitnow.fr/jobs/companies/vo2-group/vo2-force-developpeurse-ia-ai-engineer-paris-france-266086"
+      ],
+      "offres_citees": [
+        "arbeitnow:remote-senior-data-engineer-real-time-analytics-489321",
+        "arbeitnow:vo2-force-developpeurse-ia-ai-engineer-paris-france-266086"
+      ],
+      "duree_s": 78.1,
+      "tokens": 20615,
+      "recherches": 3,
+      "appels_outils": 5,
+      "fournisseur_final": "groq",
+      "repond": true,
+      "cv_bien_utilise": true,
+      "detail_lu": null,
+      "liens_tous_valides": true,
+      "contrainte_respectee": true,
+      "offre_attendue_trouvee": true,
+      "honnete_si_aucune_offre": null,
+      "source_citee": true
+    },
+    {
+      "id": "data-scientist-paris",
+      "question": "Je cherche un poste de data scientist à Paris.",
+      "reponse": "**Offres d’emploi trouvées pour un poste de Data Scientist à Paris**\n\n| # | Titre | Entreprise | Lieu | Source | Lien |\n|---|-------|------------|------|--------|------|\n| 1 | **Data Scientist Internship** | Pigment | Paris | Arbeitnow | <https://www.arbeitnow.fr/jobs/companies/pigment/data-scientist-internship-paris-490344> |\n| 2 | **Data Scientist | Projets Pricing & Segmentation – Practice IA** | MARGO | Paris | Arbeitnow | <https://www.arbeitnow.fr/jobs/companies/margo/data-scientist-projets-pricing-segmentation-practice-ia-margo-paris-338953> |\n\n---\n\n### 1️⃣ Data Scientist Internship – Pigment  \n**Résumé**  \nPigment recherche un(e) stagiaire Data Scientist pour travailler sur son “AI Modeler”. Le stage porte sur la création de modèles LLM capables de transformer des spécifications, des documents ou des bases de données en modèles fonctionnels. Vous serez amené(e) à définir des métriques, concevoir des prompts/agents, benchmarker la qualité et le coût, et collaborer avec les équipes d’ingénierie et de data science. La stack technique principale est **Python** et **LangGraph**, avec des outils comme Weights & Biases, Hugging Face, GCP et Docker.\n\n**Score d’adéquation (sur 100) : 70**  \n- **Points forts** : maîtrise de Python, expérience avec les LLM (OpenAI, LangChain), projets RAG, bonnes bases en pandas & scikit‑learn, connaissance de Docker et du cloud (GCP mentionné dans la description).  \n- **Compétences manquantes / à renforcer** : expérience professionnelle en data‑science (le stage est junior, donc acceptable), connaissance de LangGraph (non mentionnée), maîtrise de pipelines de production (MLflow, CI/CD) et de l’infrastructure cloud (GCP, Docker) à un niveau plus avancé.\n\n---\n\n### 2️⃣ Data Scientist | Projets Pricing & Segmentation – Practice IA – MARGO  \n**Résumé**  \nMARGO recherche un(e) Data Scientist pour un groupe industriel français. Les missions couvrent : optimisation de pricing, segmentation client, recommandations ciblées, mise en production et suivi via Databricks. Le poste implique la conception de modèles de classification/régression, la collaboration avec les métiers, la phase R&D et le déploiement en production. Le profil attendu possède un diplôme Bac+5 (école d’ingénieur, université, PhD), une solide maîtrise de Python et des bibliothèques ML/DL (scikit‑learn, TensorFlow, PyTorch, XGBoost) ainsi d’une expérience sur des projets industriels à grande échelle.\n\n**Score d’adéquation (sur 100) : 40**  \n- **Points forts** : bonnes bases en Python, scikit‑learn, expérience avec des projets IA (chatbot RAG, API, tableau de bord).  \n- **Compétences manquantes** : absence de formation Bac+5/PhD en data‑science, peu d’expérience en production industrielle, maîtrise limitée des frameworks deep‑learning (TensorFlow, PyTorch, XGBoost), aucune mention de Databricks, de pipelines CI/CD ou de gestion de gros volumes de données.  \n\n---\n\n## Recommandation\n\n- **Priorité :** Postulez rapidement à l’offre **Data Scientist Internship – Pigment**. Le stage correspond bien à votre niveau actuel, vous permettra de consolider vos compétences LLM et de gagner de l’expérience en production, tout en restant à Paris.  \n- **Option secondaire :** Si vous êtes prête à renforcer votre profil (formations complémentaires en deep‑learning, certifications cloud, projets plus complexes), vous pourriez envisager l’offre **MARGO** à moyen terme, mais elle requiert aujourd’hui un niveau d’expérience plus avancé.  \n\nN’hésitez pas à me dire si vous souhaitez que je vous aide à préparer votre candidature (CV ciblé, lettre de motivation, mise en avant de vos projets RAG, etc.) ou à rechercher d’autres opportunités (télétravail, junior, stage). Bonne chance !",
+      "erreur": "",
+      "appels": [
+        {
+          "nom": "read_cv",
+          "arguments": {}
+        },
+        {
+          "nom": "search_jobs",
+          "arguments": {
+            "lieu": "Paris",
+            "max_resultats": 5,
+            "mots_cles": "data scientist",
+            "teletravail_seulement": false
+          }
+        },
+        {
+          "nom": "get_job_details",
+          "arguments": {
+            "id_offre": "arbeitnow:data-scientist-internship-paris-490344"
+          }
+        },
+        {
+          "nom": "get_job_details",
+          "arguments": {
+            "id_offre": "arbeitnow:data-scientist-projets-pricing-segmentation-practice-ia-margo-paris-338953"
+          }
+        }
+      ],
+      "liens": [
+        "https://www.arbeitnow.fr/jobs/companies/pigment/data-scientist-internship-paris-490344",
+        "https://www.arbeitnow.fr/jobs/companies/margo/data-scientist-projets-pricing-segmentation-practice-ia-margo-paris-338953"
+      ],
+      "offres_citees": [
+        "arbeitnow:data-scientist-internship-paris-490344",
+        "arbeitnow:data-scientist-projets-pricing-segmentation-practice-ia-margo-paris-338953"
+      ],
+      "duree_s": 72.8,
+      "tokens": 10158,
+      "recherches": 1,
+      "appels_outils": 4,
+      "fournisseur_final": "groq",
+      "repond": true,
+      "cv_bien_utilise": false,
+      "detail_lu": null,
+      "liens_tous_valides": true,
+      "contrainte_respectee": true,
+      "offre_attendue_trouvee": true,
+      "honnete_si_aucune_offre": null,
+      "source_citee": true
+    }
+  ]
+}

@@ -1,0 +1,357 @@
+{
+  "label": "ollama-avant",
+  "modele": "ollama · qwen3:8b",
+  "resultats": [
+    {
+      "id": "dev-python-france",
+      "question": "Trouve des offres de développeur Python en France.",
+      "reponse": "Voici les offres de développeur Python trouvées en France :\n\n1. **[ VO2 FORCE ] - Développeur(se) IA / AI Engineer**  \n   **Entreprise** : VO2 Group  \n   **Lieu** : Paris, France  \n   [Lien vers l'offre](https://www.arbeitnow.fr/jobs/companies/vo2-group/vo2-force-developpeurse-ia-ai-engineer-paris-france-266086)  \n   **Source** : Arbeitnow  \n   **Résumé** : Poste de développeur IA / AI Engineer au sein de VO2 Group, basé à Paris. Le candidat devra travailler sur des projets liés à l'intelligence artificielle et à l'ingénierie logicielle.\n\n2. **Alternance - Commercial·e / Sales / Business Developer**  \n   **Entreprise** : Matera  \n   **Lieu** : Paris, Île-de-France, France  \n   [Lien vers l'offre](https://www.arbeitnow.fr/jobs/companies/matera/alternance-commerciale-sales-business-developer-paris-314286)  \n   **Source** : Arbeitnow  \n   **Résumé** : Offre d'alternance en tant que commercial·e / Sales / Business Developer. Bien que le poste ne soit pas spécifiquement un développeur Python, il peut être pertinent pour des profils en transition.\n\n3. **Senior Data Engineer - Real time analytics**  \n   **Entreprise** : Aircall  \n   **Lieu** : France Remote  \n   [Lien vers l'offre](https://www.arbeitnow.fr/jobs/companies/aircall/remote-senior-data-engineer-real-time-analytics-489321)  \n   **Source** : Arbeitnow  \n   **Résumé** : Poste de Senior Data Engineer à Aircall, basé en France (télétravail possible). Le candidat devra gérer des données en temps réel et optimiser les systèmes de traitement.\n\n4. **CENTRALE LYON - Ingénieur informatique / EDA – Qualification d’outils, modèles et IP**  \n   **Entreprise** : CENTRALE LYON  \n   **Lieu** : Ecully, Auvergne-Rhône-Alpes, France  \n   [Lien vers l'offre](https://www.arbeitnow.fr/jobs/companies/centrale-lyon/centrale-lyon-ingenieur-informatique-eda-qualification-doutils-modeles-et-ip-ecully-274923)  \n   **Source** : Arbeitnow  \n   **Résumé** : Poste d'ingénieur informatique au sein de CENTRALE LYON, avec une spécialisation dans l'EDA (Electronic Design Automation). Le poste est technique et exige une maîtrise des outils de conception.\n\n5. **CENTRALE LYON - Post-Doctoral Position Ferroelectric-Based Ternary Computing**  \n   **Entreprise** : CENTRALE LYON  \n   **Lieu** : Ecully, Auvergne-Rhône-Alpes, France  \n   [Lien vers l'offre](https://www.arbeitnow.fr/jobs/companies/centrale-lyon/centrale-lyon-post-doctoral-position-ferroelectric-based-ternary-computing-from-circuit-design-to-system-level-integration-scientific-context-ecull-308099)  \n   **Source** : Arbeitnow  \n   **Résumé** : Poste de post-doctorant en informatique, avec une spécialisation dans le calcul ternaire basé sur les matériaux ferroélectriques. Le poste est très technique et exige une expertise en conception de circuits.\n\nAucun CV n'a été lu pour évaluer l'adéquation avec ces offres. Si vous souhaitez une analyse personnalisée, je peux lire votre CV pour déterminer quelles offres vous correspondent le mieux.",
+      "erreur": "",
+      "appels": [
+        {
+          "nom": "search_jobs",
+          "arguments": {
+            "mots_cles": "python developer",
+            "lieu": "France",
+            "max_resultats": 5
+          }
+        }
+      ],
+      "liens": [
+        "https://www.arbeitnow.fr/jobs/companies/vo2-group/vo2-force-developpeurse-ia-ai-engineer-paris-france-266086",
+        "https://www.arbeitnow.fr/jobs/companies/matera/alternance-commerciale-sales-business-developer-paris-314286",
+        "https://www.arbeitnow.fr/jobs/companies/aircall/remote-senior-data-engineer-real-time-analytics-489321",
+        "https://www.arbeitnow.fr/jobs/companies/centrale-lyon/centrale-lyon-ingenieur-informatique-eda-qualification-doutils-modeles-et-ip-ecully-274923",
+        "https://www.arbeitnow.fr/jobs/companies/centrale-lyon/centrale-lyon-post-doctoral-position-ferroelectric-based-ternary-computing-from-circuit-design-to-system-level-integration-scientific-context-ecull-308099"
+      ],
+      "offres_citees": [
+        "arbeitnow:vo2-force-developpeurse-ia-ai-engineer-paris-france-266086",
+        "arbeitnow:alternance-commerciale-sales-business-developer-paris-314286",
+        "arbeitnow:remote-senior-data-engineer-real-time-analytics-489321",
+        "arbeitnow:centrale-lyon-ingenieur-informatique-eda-qualification-doutils-modeles-et-ip-ecully-274923",
+        "arbeitnow:centrale-lyon-post-doctoral-position-ferroelectric-based-ternary-computing-from-circuit-design-to-system-level-integration-scientific-context-ecull-308099"
+      ],
+      "duree_s": 30.8,
+      "tokens": 3493,
+      "recherches": 1,
+      "appels_outils": 1,
+      "fournisseur_final": "ollama",
+      "repond": true,
+      "cv_bien_utilise": true,
+      "detail_lu": null,
+      "liens_tous_valides": true,
+      "contrainte_respectee": true,
+      "offre_attendue_trouvee": true,
+      "honnete_si_aucune_offre": null,
+      "source_citee": true
+    },
+    {
+      "id": "data-scientist-paris",
+      "question": "Je cherche un poste de data scientist à Paris.",
+      "reponse": "Voici quelques offres de data scientist à Paris que j'ai trouvées :\n\n1. **Data Scientist Internship**  \n   - **Entreprise** : Pigment  \n   - **Lieu** : Paris  \n   - **Source** : Arbeitnow  \n   - **Lien** : [Data Scientist Internship](https://www.arbeitnow.fr/jobs/companies/pigment/data-scientist-internship-paris-490344)  \n   - **Résumé** : Poste d'internat de data scientist au sein de Pigment, une entreprise innovante dans le domaine de l'IA. Le poste est à pourvoir à Paris et se termine en octobre 2026.\n\n2. **Data Scientist | Projets Pricing & Segmentation – Practice IA MARGO**  \n   - **Entreprise** : MARGO  \n   - **Lieu** : Paris  \n   - **Source** : Arbeitnow  \n   - **Lien** : [Data Scientist | Projets Pricing & Segmentation – Practice IA MARGO](https://www.arbeitnow.fr/jobs/companies/margo/data-scientist-projets-pricing-segmentation-practice-ia-margo-paris-338953)  \n   - **Résumé** : Poste de data scientist au sein de MARGO, une entreprise spécialisée dans l'IA. Le candidat travaillera sur des projets de pricing et de segmentation.\n\n3. **Lead Data Analyst - Recouvrement & crédit H/F**  \n   - **Entreprise** : Octopus Energy Group  \n   - **Lieu** : Paris (FR)  \n   - **Source** : Arbeitnow  \n   - **Lien** : [Lead Data Analyst - Recouvrement & crédit H/F](https://www.arbeitnow.fr/jobs/companies/octopus-energy-group/lead-data-analyst-recouvrement-credit-h-f-paris-fr-166199)  \n   - **Résumé** : Poste de lead data analyst au sein d'Octopus Energy Group, une entreprise énergétique. Le candidat travaillera sur des projets de recouvrement et de crédit.\n\n4. **Machine Learning Engineer – Practice IA MARGO**  \n   - **Entreprise** : MARGO  \n   - **Lieu** : Paris  \n   - **Source** : Arbeitnow  \n   - **Lien** : [Machine Learning Engineer – Practice IA MARGO](https://www.arbeitnow.fr/jobs/companies/margo/machine-learning-engineer-practice-ia-margo-paris-362460)  \n   - **Résumé** : Poste de machine learning engineer au sein de MARGO. Le candidat travaillera sur des projets d'IA et de machine learning.\n\n5. **Lead IA Engineer | Practice IA MARGO**  \n   - **Entreprise** : MARGO  \n   - **Lieu** : Paris  \n   - **Source** : Arbeitnow  \n   - **Lien** : [Lead IA Engineer | Practice IA MARGO](https://www.arbeitnow.fr/jobs/companies/margo/lead-ia-engineer-practice-ia-margo-paris-256013)  \n   - **Résumé** : Poste de lead IA engineer au sein de MARGO. Le candidat sera en charge de projets d'IA et de machine learning.\n\nJe n'ai pas encore lu votre CV, mais si vous souhaitez que je compare vos compétences aux offres, je peux le faire. Veuillez me le transmettre.",
+      "erreur": "",
+      "appels": [
+        {
+          "nom": "search_jobs",
+          "arguments": {
+            "mots_cles": "data scientist",
+            "lieu": "Paris",
+            "max_resultats": 5
+          }
+        }
+      ],
+      "liens": [
+        "https://www.arbeitnow.fr/jobs/companies/pigment/data-scientist-internship-paris-490344",
+        "https://www.arbeitnow.fr/jobs/companies/margo/data-scientist-projets-pricing-segmentation-practice-ia-margo-paris-338953",
+        "https://www.arbeitnow.fr/jobs/companies/octopus-energy-group/lead-data-analyst-recouvrement-credit-h-f-paris-fr-166199",
+        "https://www.arbeitnow.fr/jobs/companies/margo/machine-learning-engineer-practice-ia-margo-paris-362460",
+        "https://www.arbeitnow.fr/jobs/companies/margo/lead-ia-engineer-practice-ia-margo-paris-256013"
+      ],
+      "offres_citees": [
+        "arbeitnow:data-scientist-internship-paris-490344",
+        "arbeitnow:data-scientist-projets-pricing-segmentation-practice-ia-margo-paris-338953",
+        "arbeitnow:lead-data-analyst-recouvrement-credit-h-f-paris-fr-166199",
+        "arbeitnow:machine-learning-engineer-practice-ia-margo-paris-362460",
+        "arbeitnow:lead-ia-engineer-practice-ia-margo-paris-256013"
+      ],
+      "duree_s": 24.2,
+      "tokens": 3226,
+      "recherches": 1,
+      "appels_outils": 1,
+      "fournisseur_final": "ollama",
+      "repond": true,
+      "cv_bien_utilise": true,
+      "detail_lu": null,
+      "liens_tous_valides": true,
+      "contrainte_respectee": true,
+      "offre_attendue_trouvee": true,
+      "honnete_si_aucune_offre": null,
+      "source_citee": true
+    },
+    {
+      "id": "product-manager-berlin",
+      "question": "Quelles offres de product manager y a-t-il à Berlin ?",
+      "reponse": "Voici les offres de **Product Manager** à **Berlin** que j'ai trouvées :\n\n1. **Associate Product Manager (m/f/d)**  \n   - **Entreprise** : Superchat  \n   - **Lieu** : Berlin, Berlin  \n   - **Source** : Arbeitnow  \n   - **Lien** : [Voir l'offre](https://www.arbeitnow.com/jobs/companies/superchat/associate-product-manager-berlin-berlin-32005)  \n   - **Résumé** : Poste de Product Manager junior pour une startup technologique. Recherche un candidat motivé pour contribuer à la stratégie produit et à la croissance de l'entreprise.\n\n2. **Senior Product Design Engineer**  \n   - **Entreprise** : Rohlik  \n   - **Lieu** : Berlin, Germany  \n   - **Source** : Arbeitnow  \n   - **Lien** : [Voir l'offre](https://www.arbeitnow.com/jobs/companies/rohlik/senior-product-design-engineer-berlin-214302)  \n   - **Résumé** : Poste de Senior Product Design Engineer pour une entreprise innovante. Recherche un expert en design de produit pour contribuer à la conception et à l'optimisation des produits.\n\n3. **Senior Customer Success Manager (m/f/d)**  \n   - **Entreprise** : Boardwise GmbH  \n   - **Lieu** : Berlin  \n   - **Source** : Arbeitnow  \n   - **Lien** : [Voir l'offre](https://www.arbeitnow.com/jobs/companies/boardwise-gmbh/senior-customer-success-manager-berlin-474292)  \n   - **Résumé** : Poste de Senior Customer Success Manager pour une entreprise de logiciels. Recherche un candidat expérimenté pour gérer la satisfaction client et la relation avec les clients.\n\n4. **Low-touch Customer Success Manager (Remote - EMEA)**  \n   - **Entreprise** : N8N  \n   - **Lieu** : Berlin Office  \n   - **Source** : Arbeitnow  \n   - **Lien** : [Voir l'offre](https://www.arbeitnow.com/jobs/companies/n8n/low-touch-customer-success-manager-remote-emea-berlin-44390)  \n   - **Résumé** : Poste de Customer Success Manager à distance, avec un bureau à Berlin. Recherche un candidat pour gérer la satisfaction client et la relation avec les clients.\n\n5. **(Senior) Account Manager - Nachhaltigkeit**  \n   - **Entreprise** : Rootglobal  \n   - **Lieu** : Berlin  \n   - **Source** : Arbeitnow  \n   - **Lien** : [Voir l'offre](https://www.arbeitnow.com/jobs/companies/rootglobal/senior-account-manager-nachhaltigkeit-berlin-153902)  \n   - **Résumé** : Poste d'Account Manager pour une entreprise axée sur la durabilité. Recherche un candidat pour gérer les relations clients et promouvoir la durabilité.\n\nSi tu souhaites que je compare ces offres avec ton CV, je peux le lire pour te donner un avis personnalisé.",
+      "erreur": "",
+      "appels": [
+        {
+          "nom": "search_jobs",
+          "arguments": {
+            "mots_cles": "product manager",
+            "lieu": "Berlin",
+            "teletravail_seulement": false,
+            "max_resultats": 5
+          }
+        }
+      ],
+      "liens": [
+        "https://www.arbeitnow.com/jobs/companies/superchat/associate-product-manager-berlin-berlin-32005",
+        "https://www.arbeitnow.com/jobs/companies/rohlik/senior-product-design-engineer-berlin-214302",
+        "https://www.arbeitnow.com/jobs/companies/boardwise-gmbh/senior-customer-success-manager-berlin-474292",
+        "https://www.arbeitnow.com/jobs/companies/n8n/low-touch-customer-success-manager-remote-emea-berlin-44390",
+        "https://www.arbeitnow.com/jobs/companies/rootglobal/senior-account-manager-nachhaltigkeit-berlin-153902"
+      ],
+      "offres_citees": [
+        "arbeitnow:associate-product-manager-berlin-berlin-32005",
+        "arbeitnow:senior-product-design-engineer-berlin-214302",
+        "arbeitnow:senior-customer-success-manager-berlin-474292",
+        "arbeitnow:low-touch-customer-success-manager-remote-emea-berlin-44390",
+        "arbeitnow:senior-account-manager-nachhaltigkeit-berlin-153902"
+      ],
+      "duree_s": 30.9,
+      "tokens": 3154,
+      "recherches": 1,
+      "appels_outils": 1,
+      "fournisseur_final": "ollama",
+      "repond": true,
+      "cv_bien_utilise": true,
+      "detail_lu": null,
+      "liens_tous_valides": true,
+      "contrainte_respectee": true,
+      "offre_attendue_trouvee": true,
+      "honnete_si_aucune_offre": null,
+      "source_citee": true
+    },
+    {
+      "id": "react-teletravail",
+      "question": "Trouve des offres de développeur React en télétravail.",
+      "reponse": "Voici des offres de développeur React en télétravail que j'ai trouvées :\n\n1. **Senior React Full-stack Developer**  \n   - **Entreprise** : Lemon.io  \n   - **Lieu** : Europe, USA, Canada, APAC  \n   - **Source** : Remotive  \n   - **Lien** : [Senior React Full-stack Developer](https://remotive.com/remote-jobs/software-development/senior-react-full-stack-developer-2091133)  \n   - **Résumé** : Poste de développeur full-stack senior avec une expertise en React. L'entreprise recherche un candidat capable de concevoir et de développer des applications web modernes. Le télétravail est possible depuis plusieurs régions.\n\n2. **Full-Stack Developer**  \n   - **Entreprise** : Fluence International, Inc.  \n   - **Lieu** : Worldwide  \n   - **Source** : Remotive  \n   - **Lien** : [Full-Stack Developer](https://remotive.com/remote-jobs/software-development/full-stack-developer-2091165)  \n   - **Résumé** : Poste de développeur full-stack pour un projet international. L'entreprise recherche un candidat polyvalent capable de travailler sur des projets de développement web. Le télétravail est possible partout dans le monde.\n\n3. **Senior Back-end Developer**  \n   - **Entreprise** : Lemon.io  \n   - **Lieu** : Europe, USA, Canada, Australia, Singapore, Mexico, Saudi Arabia  \n   - **Source** : Remotive  \n   - **Lien** : [Senior Back-end Developer](https://remotive.com/remote-jobs/software-development/senior-back-end-developer-2091135)  \n   - **Résumé** : Poste de développeur back-end senior pour un projet de développement web. L'entreprise recherche un candidat avec une expertise en back-end et une capacité à collaborer avec des équipes internationales. Le télétravail est possible depuis plusieurs régions.\n\n4. **Senior Full Stack Developer - Deepdesk**  \n   - **Entreprise** : AnywhereNow  \n   - **Lieu** : Remote job  \n   - **Source** : Arbeitnow  \n   - **Lien** : [Senior Full Stack Developer - Deepdesk](https://www.arbeitnow.nl/jobs/companies/anywherenow/remote-senior-full-stack-developer-deepdesk-rotterdam-346552)  \n   - **Résumé** : Poste de développeur full-stack senior pour un projet de développement web. L'entreprise recherche un candidat capable de concevoir et de développer des applications web modernes. Le télétravail est possible.\n\n5. **(Senior) React Native Engineer (m/f/x) - Based in Germany**  \n   - **Entreprise** : Cara Care  \n   - **Lieu** : Berlin, Germany  \n   - **Source** : Arbeitnow  \n   - **Lien** : [(Senior) React Native Engineer (m/f/x) - Based in Germany](https://www.arbeitnow.com/jobs/companies/cara-care/remote-senior-react-native-engineer-based-in-germany-berlin-388773)  \n   - **Résumé** : Poste de développeur React Native senior pour un projet en Allemagne. L'entreprise recherche un candidat avec une expertise en React Native et une capacité à travailler en équipe. Le télétravail est possible.\n\nSi tu souhaites que je compare ces offres à ton profil, je peux lire ton CV pour évaluer ton adéquation avec ces postes.",
+      "erreur": "",
+      "appels": [
+        {
+          "nom": "search_jobs",
+          "arguments": {
+            "teletravail_seulement": true,
+            "mots_cles": "React developer"
+          }
+        }
+      ],
+      "liens": [
+        "https://remotive.com/remote-jobs/software-development/senior-react-full-stack-developer-2091133",
+        "https://remotive.com/remote-jobs/software-development/full-stack-developer-2091165",
+        "https://remotive.com/remote-jobs/software-development/senior-back-end-developer-2091135",
+        "https://www.arbeitnow.nl/jobs/companies/anywherenow/remote-senior-full-stack-developer-deepdesk-rotterdam-346552",
+        "https://www.arbeitnow.com/jobs/companies/cara-care/remote-senior-react-native-engineer-based-in-germany-berlin-388773"
+      ],
+      "offres_citees": [
+        "remotive:2091133",
+        "remotive:2091165",
+        "remotive:2091135",
+        "arbeitnow:remote-senior-full-stack-developer-deepdesk-rotterdam-346552",
+        "arbeitnow:remote-senior-react-native-engineer-based-in-germany-berlin-388773"
+      ],
+      "duree_s": 68.9,
+      "tokens": 3189,
+      "recherches": 1,
+      "appels_outils": 1,
+      "fournisseur_final": "ollama",
+      "repond": true,
+      "cv_bien_utilise": true,
+      "detail_lu": null,
+      "liens_tous_valides": true,
+      "contrainte_respectee": true,
+      "offre_attendue_trouvee": true,
+      "honnete_si_aucune_offre": null,
+      "source_citee": true
+    },
+    {
+      "id": "devops-royaume-uni",
+      "question": "Trouve des offres de DevOps ou de platform engineer au Royaume-Uni.",
+      "reponse": "Aucune offre n'a été trouvée avec les mots-clés \"platform engineer\" au Royaume-Uni. Essayons avec d'autres mots-clés liés à la fonction de DevOps ou de platform engineer, comme \"DevOps\", \"cloud engineer\", ou \"infrastructure engineer\".",
+      "erreur": "",
+      "appels": [
+        {
+          "nom": "search_jobs",
+          "arguments": {
+            "mots_cles": "DevOps engineer",
+            "lieu": "Royaume-Uni",
+            "max_resultats": 5,
+            "teletravail_seulement": false
+          }
+        },
+        {
+          "nom": "search_jobs",
+          "arguments": {
+            "mots_cles": "platform engineer",
+            "teletravail_seulement": false,
+            "lieu": "Royaume-Uni",
+            "max_resultats": 5
+          }
+        }
+      ],
+      "liens": [],
+      "offres_citees": [],
+      "duree_s": 16.1,
+      "tokens": 2955,
+      "recherches": 2,
+      "appels_outils": 2,
+      "fournisseur_final": "ollama",
+      "repond": true,
+      "cv_bien_utilise": true,
+      "detail_lu": null,
+      "liens_tous_valides": true,
+      "contrainte_respectee": null,
+      "offre_attendue_trouvee": false,
+      "honnete_si_aucune_offre": null,
+      "source_citee": null
+    },
+    {
+      "id": "cv-france",
+      "question": "Trouve 3 offres en France qui correspondent à mon CV.",
+      "reponse": "### Offres d'emploi correspondant à ton CV\n\n#### 1. **Développeur(se) IA / AI Engineer**  \n**Entreprise** : VO2 Group  \n**Lieu** : Paris, France  \n**Source** : Arbeitnow  \n**Lien** : [Détail de l'offre](https://www.arbeitnow.fr/jobs/companies/vo2-group/vo2-force-developpeurse-ia-ai-engineer-paris-france-266086)  \n\n**Résumé** : Poste de développeur IA / AI Engineer à Paris, France. L'entreprise recherche un·e candidat·e avec des compétences en IA, en Python, et dans le domaine du développement de solutions innovantes. Le poste est en CDI.\n\n#### 2. **Senior Data Engineer - Real time analytics**  \n**Entreprise** : Aircall  \n**Lieu** : France Remote  \n**Source** : Arbeitnow  \n**Lien** : [Détail de l'offre](https://www.arbeitnow.fr/jobs/companies/aircall/remote-senior-data-engineer-real-time-analytics-489321)  \n\n**Résumé** : Poste de Senior Data Engineer à distance en France. L'entreprise recherche un·e professionnel·e avec des compétences en data engineering, en Python, et dans la gestion de données en temps réel. Le poste est en CDI.\n\n#### 3. **Principal Solution Engineer**  \n**Entreprise** : Aeratechnology  \n**Lieu** : Paris, France  \n**Source** : Arbeitnow  \n**Lien** : [Détail de l'offre](https://www.arbeitnow.fr/jobs/companies/aeratechnology/principal-solution-engineer-paris-france-244051)  \n\n**Résumé** : Poste de Principal Solution Engineer à Paris. L'entreprise recherche un·e candidat·e avec des compétences en ingénierie de solutions, en Python, et dans la conception de systèmes technologiques. Le poste est en CDI.\n\n---\n\n### Score d'adéquation avec ton CV (sur 100)\n- **Score** : 75/100  \n- **Points forts** :  \n  - Compétences en Python, Django, FastAPI, et en IA (API de LLM, RAG, LangChain).  \n  - Expérience en développement de projets (Chatbot RAG, API REST, Tableau de bord des ventes).  \n  - Formation en développement Python (Bootcamp).  \n- **Compétences manquantes** :  \n  - Expérience en gestion de projet ou en leadership.  \n  - Expérience en gestion de bases de données ou en cloud computing.  \n  - Expérience en gestion de produits ou en marketing (pour les postes liés à l'IA et aux produits).\n\n---\n\n### Conseils\n- **Postes à privilégier** : Les postes de développeur IA, de data engineer, et de solution engineer correspondent bien à tes compétences en Python et en IA.\n- **Améliorations possibles** : Ajouter des expériences en gestion de projet, en cloud computing, ou en marketing pour mieux correspondre aux postes de type \"solution engineer\" ou \"product designer\".\n\nSi tu souhaites, je peux t'aider à rédiger une lettre de motivation ou un CV adapté à ces postes.",
+      "erreur": "",
+      "appels": [
+        {
+          "nom": "read_cv",
+          "arguments": {}
+        },
+        {
+          "nom": "search_jobs",
+          "arguments": {
+            "max_resultats": 5,
+            "teletravail_seulement": false,
+            "mots_cles": "python developer",
+            "lieu": "France"
+          }
+        },
+        {
+          "nom": "search_jobs",
+          "arguments": {
+            "mots_cles": "full-stack developer",
+            "teletravail_seulement": false,
+            "lieu": "France",
+            "max_resultats": 5
+          }
+        },
+        {
+          "nom": "search_jobs",
+          "arguments": {
+            "lieu": "France",
+            "max_resultats": 5,
+            "mots_cles": "software engineer",
+            "teletravail_seulement": false
+          }
+        }
+      ],
+      "liens": [
+        "https://www.arbeitnow.fr/jobs/companies/vo2-group/vo2-force-developpeurse-ia-ai-engineer-paris-france-266086",
+        "https://www.arbeitnow.fr/jobs/companies/aircall/remote-senior-data-engineer-real-time-analytics-489321",
+        "https://www.arbeitnow.fr/jobs/companies/aeratechnology/principal-solution-engineer-paris-france-244051"
+      ],
+      "offres_citees": [
+        "arbeitnow:vo2-force-developpeurse-ia-ai-engineer-paris-france-266086",
+        "arbeitnow:remote-senior-data-engineer-real-time-analytics-489321",
+        "arbeitnow:principal-solution-engineer-paris-france-244051"
+      ],
+      "duree_s": 84.6,
+      "tokens": 11338,
+      "recherches": 3,
+      "appels_outils": 4,
+      "fournisseur_final": "ollama",
+      "repond": true,
+      "cv_bien_utilise": true,
+      "detail_lu": null,
+      "liens_tous_valides": true,
+      "contrainte_respectee": true,
+      "offre_attendue_trouvee": true,
+      "honnete_si_aucune_offre": null,
+      "source_citee": true
+    },
+    {
+      "id": "cv-offre-precise",
+      "question": "L'offre « Junior AI Consultant » à Paris correspond-elle à mon profil ?",
+      "reponse": "### Offre : **Junior AI Consultant**  \n**Entreprise** : Pigment  \n**Lieu** : Paris  \n**Source** : Arbeitnow  \n[Lien vers l'offre](https://www.arbeitnow.fr/jobs/companies/pigment/junior-ai-consultant-paris-64006)\n\n---\n\n### Résumé de l'offre  \nPigment est une plateforme SaaS d'IA dédiée à la planification et à la gestion des performances d'entreprise. En tant que **Junior AI Consultant**, vous participerez à l'application de la méthode Pigment Frame auprès des partenaires, en utilisant des outils d'IA pour qualifier automatiquement les projets. Vous travaillerez en étroite collaboration avec des architectes senior et le produit pour améliorer les outils d'analyse. L'offre est à temps plein, basée à Paris.\n\n---\n\n### Adéquation avec votre profil  \n**Score d'adéquation** : **75/100**\n\n**Points forts** :  \n- Vos compétences en **IA** (API de LLM, RAG, LangChain) correspondent à l'expertise requise.  \n- Vos **projets** (Chatbot RAG, API REST) montrent une bonne maîtrise des outils d'IA et de l'automatisation.  \n- Votre **expérience en Python** et **FastAPI** est pertinente pour le développement d'outils d'analyse.  \n- Votre **envie de reconversion** vers le développement correspond à la recherche d'un premier poste.\n\n**Compétences manquantes** :  \n- Une **expérience en gestion de projet** ou en **consulting** serait un atout.  \n- Une **maîtrise approfondie de l'anglais** serait utile, compte tenu de la nature internationale de l'entreprise.\n\n---\n\n### Recommandation  \nCette offre correspond bien à votre profil, surtout en termes de **compétences en IA** et de **projet de reconversion**. Cependant, vous pourriez renforcer votre candidature en mettant en avant une **expérience en gestion de projet** ou en **consulting**, ainsi qu'en améliorant votre **maîtrise de l'anglais**. N'hésitez pas à postuler et à préciser vos compétences en IA et vos projets !",
+      "erreur": "",
+      "appels": [
+        {
+          "nom": "read_cv",
+          "arguments": {}
+        },
+        {
+          "nom": "search_jobs",
+          "arguments": {
+            "lieu": "Paris",
+            "max_resultats": 5,
+            "mots_cles": "AI consultant"
+          }
+        },
+        {
+          "nom": "get_job_details",
+          "arguments": {
+            "id_offre": "arbeitnow:junior-ai-consultant-paris-64006"
+          }
+        }
+      ],
+      "liens": [
+        "https://www.arbeitnow.fr/jobs/companies/pigment/junior-ai-consultant-paris-64006"
+      ],
+      "offres_citees": [
+        "arbeitnow:junior-ai-consultant-paris-64006"
+      ],
+      "duree_s": 58.3,
+      "tokens": 7161,
+      "recherches": 1,
+      "appels_outils": 3,
+      "fournisseur_final": "ollama",
+      "repond": true,
+      "cv_bien_utilise": true,
+      "detail_lu": true,
+      "liens_tous_valides": true,
+      "contrainte_respectee": true,
+      "offre_attendue_trouvee": true,
+      "honnete_si_aucune_offre": null,
+      "source_citee": true
+    },
+    {
+      "id": "boulanger-marseille",
+      "question": "Trouve des offres de boulanger à Marseille.",
+      "reponse": "Aucune offre n'a été trouvée avec les mots-clés \"boulanger\" à Marseille. Essayons avec d'autres mots-clés liés au métier de boulanger, comme \"boulangerie\", \"pain\", ou \"pâtissier\". Voulez-vous que je fasse une nouvelle recherche avec ces termes ?",
+      "erreur": "",
+      "appels": [
+        {
+          "nom": "search_jobs",
+          "arguments": {
+            "max_resultats": 5,
+            "mots_cles": "boulanger",
+            "lieu": "Marseille"
+          }
+        }
+      ],
+      "liens": [],
+      "offres_citees": [],
+      "duree_s": 8.4,
+      "tokens": 1856,
+      "recherches": 1,
+      "appels_outils": 1,
+      "fournisseur_final": "ollama",
+      "repond": true,
+      "cv_bien_utilise": true,
+      "detail_lu": null,
+      "liens_tous_valides": true,
+      "contrainte_respectee": null,
+      "offre_attendue_trouvee": null,
+      "honnete_si_aucune_offre": true,
+      "source_citee": null
+    }
+  ]
+}
