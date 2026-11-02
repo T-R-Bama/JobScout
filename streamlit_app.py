@@ -16,7 +16,7 @@ import streamlit as st
 try:
     for cle in ("GROQ_API_KEY", "ADZUNA_APP_ID", "ADZUNA_APP_KEY"):
         if cle in st.secrets and not os.getenv(cle):
-            os.environ[cle] = str(st.secrets[cle])
+            os.environ[cle] = str(st.secrets[cle]).strip()
 except Exception:  # pas de fichier de secrets en local
     pass
 

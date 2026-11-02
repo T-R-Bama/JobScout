@@ -114,8 +114,10 @@ class Modele:
                     print(f"  ⏳ Limite Groq atteinte, nouvel essai dans {attente:.0f} s.")
                     time.sleep(attente)
                 except Exception as erreur:
-                    self.erreur_groq = f"{erreur.__class__.__name__}: {erreur}"
-                    print(f"  ⚠️  Groq indisponible ({erreur}), bascule sur Ollama.")
+                    # « Connection error » cache souvent la vraie cause (clé mal collée, réseau…).
+                    cause = f" ({erreur.__cause__.__class__.__name__}: {erreur.__cause__})" if erreur.__cause__ else ""
+                    self.erreur_groq = f"{erreur.__class__.__name__}: {erreur}{cause}"
+                    print(f"  ⚠️  Groq indisponible ({erreur}{cause}), bascule sur Ollama.", flush=True)
                     break
             self.fournisseur = "ollama"
         return _appeler_ollama(messages, schemas)
