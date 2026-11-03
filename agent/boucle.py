@@ -28,6 +28,8 @@ Méthode :
 - Lis le détail (get_job_details) des offres que tu retiens avant de les résumer ou de les noter.
 - Recopie les liens exactement tels que les outils les donnent (champ « url ») : n'en fabrique jamais.
 - N'invente jamais d'offre : n'utilise que celles renvoyées par les outils.
+- Si l'utilisateur parle d'une offre déjà présentée (« la 2e », « celle de Margo »), retrouve-la dans la liste
+  des offres déjà trouvées et utilise son id avec get_job_details, sans relancer de recherche.
 
 Pour chaque offre retenue, donne :
 - le titre, l'entreprise, le lieu et un lien cliquable vers l'annonce ;
@@ -90,6 +92,65 @@ def verifier_liens(texte: str, liens_connus: set[str]) -> tuple[str, list[str]]:
     return texte, inconnus
 
 
+class Conversation:
+    """Mémoire d'une conversation, d'une demande à l'autre.
+
+    Garde les derniers échanges (raccourcis) et la liste compacte des offres déjà
+    trouvées, pour que « la 2e offre » ou « celle de Margo » aient un sens. Les liens
+    de ces offres restent connus du garde-fou.
+    """
+
+    MAX_ECHANGES = 2
+    TAILLE_MAX_REPONSE = 3_000  # caractères gardés de chaque réponse passée
+    MAX_OFFRES = 15
+
+    def __init__(self):
+        self.echanges: list[tuple[str, str]] = []
+        self.offres_vues: dict[str, dict] = {}  # id -> {id, titre, entreprise, lieu, url}
+
+    def messages(self) -> list[dict]:
+        """Messages à placer avant la nouvelle question."""
+        messages = []
+        if self.offres_vues:
+            lignes = "\n".join(f"- {o['id']} | {o['titre']} | {o['entreprise']} | {o['lieu']} | {o['url']}"
+                               for o in self.offres_vues.values())
+            messages.append({"role": "system", "content": "Offres déjà trouvées plus tôt dans la conversation "
+                             "(id | titre | entreprise | lieu | lien) :\n" + lignes})
+        for question, reponse in self.echanges:
+            if len(reponse) > self.TAILLE_MAX_REPONSE:
+                reponse = reponse[:self.TAILLE_MAX_REPONSE] + " […]"
+            messages += [{"role": "user", "content": question}, {"role": "assistant", "content": reponse}]
+        return messages
+
+    def liens_connus(self) -> set[str]:
+        return {o["url"] for o in self.offres_vues.values()}
+
+    def noter_resultat(self, nom: str, resultat: str) -> None:
+        """Retient les offres renvoyées par une recherche ou une lecture de détail."""
+        if nom not in ("search_jobs", "get_job_details"):
+            return
+        try:
+            donnees = json.loads(resultat)
+        except json.JSONDecodeError:
+            return
+        for offre in donnees if isinstance(donnees, list) else [donnees]:
+            if isinstance(offre, dict) and "id" in offre and "url" in offre:
+                self.offres_vues.pop(offre["id"], None)  # la plus récente passe en dernier
+                self.offres_vues[offre["id"]] = {c: offre.get(c, "") for c in ("id", "titre", "entreprise", "lieu", "url")}
+        while len(self.offres_vues) > self.MAX_OFFRES:
+            self.offres_vues.pop(next(iter(self.offres_vues)))
+
+    def ajouter_echange(self, question: str, reponse: str) -> None:
+        self.echanges = (self.echanges + [(question, reponse)])[-self.MAX_ECHANGES:]
+
+    def etat(self) -> dict:
+        """Copie de la mémoire (pour la rejouer, ex. réponse d'exemple mise en mémoire)."""
+        return {"echanges": list(self.echanges), "offres_vues": dict(self.offres_vues)}
+
+    def restaurer(self, etat: dict) -> None:
+        self.echanges, self.offres_vues = list(etat["echanges"]), dict(etat["offres_vues"])
+
+
 def _alleger_historique(messages: list[dict]) -> None:
     """Mémoire courte : raccourcit les plus anciens résultats d'outils si besoin.
 
@@ -115,28 +176,33 @@ def _resume(texte: str, longueur: int = 120) -> str:
 
 
 def lancer_agent(question: str, modele: Modele | None = None, afficher: bool = True,
-                 cv: str | None = None, suivi: Callable[[dict], None] | None = None) -> str:
+                 cv: str | None = None, suivi: Callable[[dict], None] | None = None,
+                 conversation: Conversation | None = None) -> str:
     """Fait travailler l'agent sur une question et renvoie sa réponse finale.
 
     cv : texte du CV à utiliser à la place du fichier CV_PATH (CV envoyé sur l'interface).
     suivi : fonction appelée à chaque étape, pour que l'interface affiche ce que fait l'agent.
+    conversation : mémoire des demandes précédentes, mise à jour avec cette demande.
     """
     modele = modele or Modele()
+    conversation = conversation or Conversation()
     messages = [
         {"role": "system", "content": PROMPT_SYSTEME},
+        *conversation.messages(),
         {"role": "user", "content": question},
     ]
     recherches = 0
-    liens_connus: set[str] = set()  # tous les liens renvoyés par les outils pendant cette demande
+    # Liens renvoyés par les outils pendant cette demande et les précédentes.
+    liens_connus: set[str] = conversation.liens_connus()
 
     def conclure(texte: str) -> str:
-        if not GARDE_FOU_LIENS:
-            return texte
-        texte, retires = verifier_liens(texte, liens_connus)
-        if afficher and retires:
-            print(f"  🛡️ Liens inventés retirés de la réponse : {', '.join(retires)}")
-        if suivi and retires:
-            suivi({"type": "liens_retires", "liens": retires})
+        if GARDE_FOU_LIENS:
+            texte, retires = verifier_liens(texte, liens_connus)
+            if afficher and retires:
+                print(f"  🛡️ Liens inventés retirés de la réponse : {', '.join(retires)}")
+            if suivi and retires:
+                suivi({"type": "liens_retires", "liens": retires})
+        conversation.ajouter_echange(question, texte)
         return texte
 
     for etape in range(1, MAX_ETAPES + 1):
@@ -176,6 +242,7 @@ def lancer_agent(question: str, modele: Modele | None = None, afficher: bool = T
                 resultat = outils.executer(appel["nom"], appel["arguments"])
             # Avant que la mémoire courte ne raccourcisse ce résultat.
             liens_connus.update(extraire_liens(resultat))
+            conversation.noter_resultat(appel["nom"], resultat)
             if afficher:
                 print(f"       → {_resume(resultat)}")
             if suivi:

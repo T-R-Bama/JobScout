@@ -49,6 +49,24 @@ Score d'adéquation : 85 / 100
 La comparaison avec le CV et le score d'adéquation sont faits par le modèle lui-même,
 à partir du CV et du détail des offres.
 
+## Mémoire de conversation
+
+L'agent se souvient des **2 derniers échanges** et de la **liste des offres déjà trouvées**
+(identifiant, titre, entreprise, lieu, lien). On peut donc enchaîner :
+
+```
+Toi   : Trouve des offres de développeur Python à Paris
+Agent : 🔧 search_jobs → 1. Développeur Python R&D (MARGO)  2. SW Team Lead (Arago) …
+Toi   : Compare la 2e offre à mon CV
+Agent : 🔧 get_job_details(arago…)  🔧 read_cv   ← retrouvée dans la mémoire, sans nouvelle recherche
+Toi   : Et est-ce qu'il y en a en télétravail ?
+Agent : 🔧 search_jobs(python developer, Paris, télétravail)   ← le contexte est gardé
+```
+
+La mémoire est bornée (réponses passées raccourcies, 15 offres au plus) pour rester sous
+la limite de tokens de Groq, et les liens des offres déjà trouvées restent connus du
+garde-fou : redonner un lien d'une demande précédente n'est pas pris pour une invention.
+
 ## Ce que j'ai appris en le construisant
 
 Chaque problème rencontré pendant les tests a donné lieu à une correction dans le code :
@@ -93,7 +111,7 @@ et [evaluation/RESULTS.md](evaluation/RESULTS.md).
 
 ## Tests automatiques
 
-41 tests vérifient le code sans appeler de LLM ni les sites d'offres (des offres fictives
+48 tests vérifient le code sans appeler de LLM ni les sites d'offres (des offres fictives
 et un faux modèle les remplacent) : ils durent 3 secondes et tournent sur GitHub à chaque
 envoi de code (badge en haut de page).
 
@@ -101,8 +119,8 @@ envoi de code (badge en haut de page).
 |---|---|
 | `tests/test_outils.py` | Filtre de lieu (ville, pays en français ou en anglais, accents), télétravail, classement de la recherche, vrai lien dans les résultats, détail d'une offre |
 | `tests/test_garde_fou.py` | Les liens inventés sont retirés (Markdown, lien seul, entre `< >`), les vrais liens et les pages d'accueil sont conservés |
-| `tests/test_boucle.py` | Boucle de l'agent avec un faux modèle : résultats renvoyés au modèle, limite de 3 recherches, réponse forcée à la dernière étape, CV toujours gardé en mémoire |
-| `tests/test_interface.py` | Interface : affichage, réponses aux exemples mises en mémoire, limite de 3 demandes par visiteur |
+| `tests/test_boucle.py` | Boucle de l'agent avec un faux modèle : résultats renvoyés au modèle, limite de 3 recherches, réponse forcée à la dernière étape, CV toujours gardé en mémoire, mémoire de conversation (offres déjà vues, liens acceptés par le garde-fou, taille bornée) |
+| `tests/test_interface.py` | Interface : affichage, réponses aux exemples mises en mémoire, limite de 3 demandes par visiteur, question de suite qui se souvient de la précédente |
 
 Lancer les tests :
 ```bash
@@ -177,7 +195,7 @@ En ligne de commande, poser une question directement :
 .venv/bin/python main.py "Trouve 3 offres en France qui correspondent à mon CV"
 ```
 
-Mode conversation (plusieurs questions à la suite) :
+Mode conversation (plusieurs questions à la suite, l'agent se souvient des précédentes) :
 ```bash
 .venv/bin/python main.py
 ```

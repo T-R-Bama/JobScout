@@ -12,19 +12,29 @@ APP = str(Path(__file__).resolve().parent.parent / "streamlit_app.py")
 EXEMPLE = "Je cherche un poste de data scientist à Paris"
 
 
+class _Appels(list):
+    """Liste des questions reçues par le faux agent, plus ce dont il se souvenait."""
+
+
 @pytest.fixture
 def faux_agent(monkeypatch):
     """Remplace l'agent par une fonction instantanée qui compte ses appels."""
-    appels = []
+    appels = _Appels()
 
-    def lancer_agent(question, modele, afficher=True, cv=None, suivi=None):
+    def lancer_agent(question, modele, afficher=True, cv=None, suivi=None, conversation=None):
         appels.append(question)
+        appels_avec_memoire.append([q for q, _ in conversation.echanges])  # ce dont l'agent se souvient
         suivi({"type": "outil", "nom": "read_cv", "arguments": {}, "resultat": "CV"})
-        return f"Réponse à : {question}"
+        reponse = f"Réponse à : {question}"
+        conversation.ajouter_echange(question, reponse)
+        return reponse
+
+    appels_avec_memoire = []
 
     monkeypatch.setattr(boucle, "lancer_agent", lancer_agent)
     monkeypatch.setenv("CV_PATH", "data/absent.pdf")
     st.cache_resource.clear()  # mémoire des exemples et compteurs remis à zéro
+    appels.memoires = appels_avec_memoire
     return appels
 
 
@@ -77,3 +87,23 @@ def test_pas_de_limite_en_local(faux_agent):
     for i in range(5):
         demander(f"Question {i}")
     assert len(faux_agent) == 5
+
+
+def test_l_agent_se_souvient_de_la_question_precedente(faux_agent):
+    at = AppTest.from_file(APP, default_timeout=30)
+    at.run()
+    at.chat_input[0].set_value("Offres Python à Lyon").run()
+    at.chat_input[0].set_value("Compare la 2e à mon CV").run()
+    assert not at.exception
+    assert faux_agent.memoires == [[], ["Offres Python à Lyon"]]
+
+
+def test_exemple_en_memoire_puis_question_de_suite(faux_agent):
+    demander(EXEMPLE)  # premier visiteur : l'exemple est calculé et mis en mémoire
+    at = AppTest.from_file(APP, default_timeout=30)
+    at.run()
+    at.chat_input[0].set_value(EXEMPLE).run()  # second visiteur : réponse en mémoire
+    at.chat_input[0].set_value("Et la 2e ?").run()
+    # La question de suite connaît l'exemple, bien que l'agent ne l'ait pas recalculé.
+    assert faux_agent == [EXEMPLE, "Et la 2e ?"]
+    assert faux_agent.memoires[-1] == [EXEMPLE]

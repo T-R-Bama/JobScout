@@ -101,10 +101,11 @@ def main() -> None:
         verifier()
         return
 
-    from agent.boucle import lancer_agent
+    from agent.boucle import Conversation, lancer_agent
     from agent.modele import Modele
 
     modele = Modele("ollama" if args.ollama else "groq")
+    conversation = Conversation()  # l'agent se souvient des demandes précédentes
     print(f"Modèle : {modele.nom}")
     questions = [args.question] if args.question else None
     while True:
@@ -112,7 +113,7 @@ def main() -> None:
         if not question:
             break
         print()
-        print(lancer_agent(question, modele))
+        print(lancer_agent(question, modele, conversation=conversation))
         if args.question:
             break
 

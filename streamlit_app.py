@@ -22,7 +22,7 @@ except Exception:  # pas de fichier de secrets en local
     pass
 
 from agent import config, outils  # noqa: E402
-from agent.boucle import lancer_agent  # noqa: E402
+from agent.boucle import Conversation, lancer_agent  # noqa: E402
 from agent.modele import Modele  # noqa: E402
 
 CV_EXEMPLE = Path(__file__).parent / "evaluation" / "cv_test.md"
@@ -91,6 +91,8 @@ if "messages" not in st.session_state:
     st.session_state.messages = []  # {"role", "content", "etapes", "modele"}
 if "modele" not in st.session_state:
     st.session_state.modele = Modele()
+if "conversation" not in st.session_state:
+    st.session_state.conversation = Conversation()  # mémoire de l'agent d'une demande à l'autre
 
 
 # --- Barre latérale : choix du CV --------------------------------------------
@@ -127,11 +129,12 @@ with st.sidebar:
                 + ("- **Adzuna** : offres en France\n" if config.ADZUNA_APP_ID and config.ADZUNA_APP_KEY else ""))
     if config.ADZUNA_APP_ID and config.ADZUNA_APP_KEY:
         st.caption("Jobs by [Adzuna](https://www.adzuna.fr)")
-    st.caption("Offres mises en cache 6 h. Chaque demande est traitée séparément : "
-               "l'agent ne se souvient pas des demandes précédentes.")
+    st.caption("Offres mises en cache 6 h. L'agent se souvient des 2 derniers échanges et des offres "
+               "déjà trouvées : tu peux enchaîner (« compare la 2e à mon CV »).")
     zone_compteur = st.empty()  # remplie en fin de page, une fois la demande comptée
     if st.session_state.messages and st.button(":material/delete: Effacer la conversation", width="stretch"):
         st.session_state.messages = []
+        st.session_state.conversation = Conversation()
         st.rerun()
 
 
@@ -209,7 +212,8 @@ if not st.session_state.messages:
 
 visiteur = identifiant_visiteur()
 memoire = reponses_des_exemples()
-cle_exemple = question if question in SUGGESTIONS.values() and cv_exemple else None
+# Un exemple n'est mis en mémoire qu'en début de conversation (sa réponse ne dépend pas du contexte).
+cle_exemple = question if question in SUGGESTIONS.values() and cv_exemple and not st.session_state.messages else None
 en_memoire = memoire.get(cle_exemple)
 if en_memoire and time.time() - en_memoire["heure"] > DUREE_MEMOIRE_EXEMPLES:
     en_memoire = None
@@ -225,6 +229,7 @@ if question and en_memoire:
                "modele": en_memoire["message"]["modele"] + f" · exemple mis en mémoire il y a {minutes} min"}
     afficher_message(message)
     st.session_state.messages.append(message)
+    st.session_state.conversation.restaurer(en_memoire["conversation"])  # pour pouvoir enchaîner
 
 elif question and demandes_restantes(visiteur) == 0:
     st.session_state.messages.pop()  # la question n'est pas traitée
@@ -249,7 +254,8 @@ elif question:
                     afficher_etape(etape)
 
             try:
-                reponse = lancer_agent(question, modele, afficher=False, cv=cv_texte, suivi=suivre)
+                reponse = lancer_agent(question, modele, afficher=False, cv=cv_texte, suivi=suivre,
+                                       conversation=st.session_state.conversation)
                 erreur = None
             except Exception as e:  # Groq saturé et pas d'Ollama (démo en ligne), réseau…
                 reponse, erreur = "", e
@@ -273,7 +279,8 @@ elif question:
             st.session_state.messages.append(message)
             compter_demande(visiteur)
             if cle_exemple:
-                memoire[cle_exemple] = {"heure": time.time(), "message": message}
+                memoire[cle_exemple] = {"heure": time.time(), "message": message,
+                                        "conversation": st.session_state.conversation.etat()}
 
 restantes = demandes_restantes(visiteur)
 if restantes is not None:
