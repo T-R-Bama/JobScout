@@ -107,3 +107,14 @@ def test_exemple_en_memoire_puis_question_de_suite(faux_agent):
     # La question de suite connaît l'exemple, bien que l'agent ne l'ait pas recalculé.
     assert faux_agent == [EXEMPLE, "Et la 2e ?"]
     assert faux_agent.memoires[-1] == [EXEMPLE]
+
+
+def test_quota_epuise_message_avec_le_vrai_delai(faux_agent, monkeypatch):
+    def lancer_agent(question, modele, **kwargs):
+        modele.attente_groq = 648  # délai annoncé par Groq
+        raise ConnectionError("Groq indisponible et pas d'Ollama")
+
+    monkeypatch.setattr(boucle, "lancer_agent", lancer_agent)
+    at = demander("Trouve moi des offres AI engineer")
+    assert "réessaie dans environ 11 minutes" in at.warning[0].value
+    assert not at.error

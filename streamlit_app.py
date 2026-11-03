@@ -169,6 +169,15 @@ def decrire_etape(etape: dict) -> tuple[str, str, str]:
     return f":material/build: {nom}", "", "complete"
 
 
+def duree_lisible(secondes: float) -> str:
+    if secondes < 90:
+        return "environ une minute"
+    if secondes < 3600:
+        return f"environ {round(secondes / 60)} minutes"
+    heures = round(secondes / 3600)
+    return f"environ {heures} heure{'s' if heures > 1 else ''}"
+
+
 def adoucir_titres(texte: str) -> str:
     """Les grands titres Markdown du modèle sont trop gros dans une conversation."""
     return re.sub(r"^#{1,3} ", "#### ", texte, flags=re.MULTILINE)
@@ -245,7 +254,7 @@ elif question:
         etapes = []
         modele = st.session_state.modele
         modele.fournisseur = "groq"  # chaque demande repart de Groq
-        modele.erreur_groq = ""
+        modele.erreur_groq, modele.attente_groq = "", 0.0
         debut = time.time()
         with st.status(":shimmer[L'agent travaille… (1 à 3 minutes avec le modèle gratuit)]", type="compact", expanded=True) as statut:
             def suivre(etape: dict) -> None:
@@ -264,8 +273,15 @@ elif question:
             statut.update(label=resume, state="error" if erreur else "complete", expanded=False)
 
         if erreur:
-            st.error("Le modèle gratuit est saturé ou indisponible pour le moment. Réessaie dans quelques minutes.",
-                     title="Pas de réponse")
+            if modele.attente_groq:
+                # Quota gratuit épuisé : on donne le vrai délai et une solution immédiate.
+                st.warning(f"Le quota gratuit du modèle est épuisé pour le moment : réessaie dans "
+                           f"{duree_lisible(modele.attente_groq)}. En attendant, les exemples de demandes "
+                           "déjà traités aujourd'hui répondent instantanément (bouton « Effacer la conversation »).",
+                           title="Quota du modèle épuisé", icon=":material/hourglass_top:")
+            else:
+                st.error("Le modèle gratuit est indisponible pour le moment. Réessaie dans quelques minutes.",
+                         title="Pas de réponse")
             raison = modele.erreur_groq or f"{erreur.__class__.__name__}: {erreur}"
             st.caption(f"Détail technique : {raison[:300]}")
             st.session_state.messages.pop()  # on retire la question restée sans réponse

@@ -80,6 +80,7 @@ class Modele:
         self.fournisseur = fournisseur if config.GROQ_API_KEY else "ollama"
         self.tokens = 0  # total consommé, utile pour suivre les limites de Groq
         self.erreur_groq = ""  # raison de la dernière bascule sur Ollama, pour l'interface
+        self.attente_groq = 0.0  # délai annoncé par Groq quand son quota est épuisé (secondes)
 
     @property
     def nom(self) -> str:
@@ -109,6 +110,7 @@ class Modele:
                     attente = float(erreur.response.headers.get("retry-after", 10))
                     if essai == 2 or attente > ATTENTE_MAX_SECONDES:
                         self.erreur_groq = f"limite de Groq atteinte, réessayer dans {attente:.0f} s"
+                        self.attente_groq = attente
                         print("  ⚠️  Limite Groq atteinte, bascule sur Ollama.")
                         break
                     print(f"  ⏳ Limite Groq atteinte, nouvel essai dans {attente:.0f} s.")
