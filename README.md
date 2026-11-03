@@ -1,5 +1,7 @@
 # JobScout : agent de veille d'offres d'emploi
 
+[![Tests](https://github.com/T-R-Bama/JobScout/actions/workflows/tests.yml/badge.svg)](https://github.com/T-R-Bama/JobScout/actions/workflows/tests.yml)
+
 Un agent IA qui **cherche des offres d'emploi, les résume et les compare à ton CV**.
 Il décide lui-même quels outils appeler et dans quel ordre. La boucle de l'agent est
 codée à la main, sans framework : le modèle choisit un outil, le programme l'exécute,
@@ -89,6 +91,30 @@ avant la consigne sur le CV). Coût : environ 22 600 tokens et 2 minutes par que
 Méthode, résultats et enseignements : [evaluation/README.md](evaluation/README.md)
 et [evaluation/RESULTS.md](evaluation/RESULTS.md).
 
+## Tests automatiques
+
+41 tests vérifient le code sans appeler de LLM ni les sites d'offres (des offres fictives
+et un faux modèle les remplacent) : ils durent 3 secondes et tournent sur GitHub à chaque
+envoi de code (badge en haut de page).
+
+| Fichier | Ce qui est vérifié |
+|---|---|
+| `tests/test_outils.py` | Filtre de lieu (ville, pays en français ou en anglais, accents), télétravail, classement de la recherche, vrai lien dans les résultats, détail d'une offre |
+| `tests/test_garde_fou.py` | Les liens inventés sont retirés (Markdown, lien seul, entre `< >`), les vrais liens et les pages d'accueil sont conservés |
+| `tests/test_boucle.py` | Boucle de l'agent avec un faux modèle : résultats renvoyés au modèle, limite de 3 recherches, réponse forcée à la dernière étape, CV toujours gardé en mémoire |
+| `tests/test_interface.py` | Interface : affichage, réponses aux exemples mises en mémoire, limite de 3 demandes par visiteur |
+
+Lancer les tests :
+```bash
+.venv/bin/pip install -r requirements-dev.txt
+```
+```bash
+.venv/bin/python -m pytest
+```
+
+Réintroduire l'ancien bug du filtre de lieu fait échouer 10 tests : ils protègent
+contre son retour.
+
 ## Conditions d'utilisation des sources
 
 - **Remotive** : chaque offre affichée doit citer Remotive comme source, avec le lien
@@ -173,6 +199,7 @@ agent/
   boucle.py     # la boucle de l'agent, le prompt système, la mémoire courte et le garde-fou des liens
 data/           # ton CV et le cache des offres (non publiés sur GitHub)
 evaluation/     # questions, CV fictif, script d'évaluation et résultats
+tests/          # tests automatiques (sans LLM ni réseau)
 main.py         # point d'entrée en ligne de commande
 streamlit_app.py  # interface web
 ```
