@@ -117,4 +117,5 @@ def test_quota_epuise_message_avec_le_vrai_delai(faux_agent, monkeypatch):
     monkeypatch.setattr(boucle, "lancer_agent", lancer_agent)
     at = demander("Trouve moi des offres AI engineer")
     assert "réessaie dans environ 11 minutes" in at.warning[0].value
-    assert not at.error
+    # Pas le message générique « indisponible » (le bandeau « Clé Groq manquante » peut exister sans clé).
+    assert not any("indisponible" in e.value for e in at.error)
