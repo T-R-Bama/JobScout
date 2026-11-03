@@ -164,14 +164,44 @@ question (même entreprise, autre numéro) : l'erreur est répétable, et le gar
 retirée. Les autres métriques sont restées identiques, sauf « Détail de l'offre lu »
 sur une question, une variation d'une exécution à l'autre sans lien avec le garde-fou.
 
-### 5. Le quota gratuit de Groq limite l'évaluation
+### 5. Groq lisait le CV sans raison
 
-Une question coûte environ **20 000 tokens** avec `gpt-oss-120b`, soit 4 fois plus
-qu'avec `qwen3:8b` sans réflexion : le modèle de Groq fait plus de recherches et lit
-plus d'offres en détail. Les 8 questions demandent donc environ 160 000 tokens,
-proche du quota quotidien gratuit. L'évaluation Groq s'est arrêtée au bout de
-2 questions le premier jour ; le script s'arrête proprement dans ce cas et indique la
-commande pour reprendre.
+Sur la démo en ligne, pour « offres Python en télétravail », `gpt-oss-120b` lisait le
+CV alors que la question ne parlait pas du profil : des tokens et du temps perdus, et
+un score d'adéquation que personne n'avait demandé. Les consignes disaient quand lire
+le CV, mais pas quand ne pas le lire. Le prompt système et la description de l'outil
+`read_cv` le précisent désormais, avec des exemples des deux cas.
+
+Pour mesurer l'effet sans épuiser le quota, un test ciblé ne regarde que la première
+décision du modèle sur les 8 questions et la question de la démo : la lecture inutile
+du CV pour « data scientist à Paris » disparaît. L'évaluation complète confirme sur
+l'ensemble des étapes.
+
+### 6. Avec Groq, l'agent complet réussit toutes les questions
+
+L'évaluation complète avec `gpt-oss-120b` (le modèle de la démo en ligne), avec tous
+les correctifs (filtre de lieu, garde-fou des liens, consigne sur le CV) :
+
+| Métrique | `groq-apres` |
+|---|---|
+| Offre pertinente trouvée | **100 % (7/7)** |
+| Lieu / télétravail respecté | **100 % (7/7)** |
+| Aucun lien inventé (modèle et réponse affichée) | **100 % (8/8)** |
+| Source citée | **100 % (7/7)** |
+| CV lu à bon escient | **100 % (8/8)**, contre 50 % (1/2) avant la consigne |
+| Détail de l'offre lu / n'invente pas d'offre | **100 %** |
+| Tokens / question | 22 626 |
+| Temps / question | 125 s |
+
+Le modèle de Groq est plus fiable que `qwen3:8b` (aucun lien inventé) mais coûte
+4 fois plus de tokens : il fait plus de recherches et lit plus d'offres en détail.
+
+### 7. Le quota gratuit de Groq limite l'évaluation
+
+Les 8 questions consomment environ **180 000 tokens**, presque tout le quota quotidien
+gratuit, partagé avec la démo en ligne. Le premier jour, l'évaluation Groq s'est
+arrêtée au bout de 2 questions ; le script s'arrête proprement dans ce cas et indique
+la commande pour reprendre. Il faut donc une journée de quota par évaluation complète.
 
 ## Limites
 

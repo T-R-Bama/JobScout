@@ -28,6 +28,7 @@ Détail de la couverture (offres visibles / offres réellement au bon endroit) :
 | `ollama-avant` (ollama · qwen3:8b) | 100 % (8/8) | 86 % (6/7) | 100 % (6/6) | 100 % (8/8) | – | 100 % (6/6) | 100 % (8/8) | 100 % (1/1) | 100 % (1/1) | – | 1.4 | 4,546 | 40 s |
 | `ollama-apres` (ollama · qwen3:8b) | 100 % (8/8) | 100 % (7/7) | 100 % (7/7) | 88 % (7/8) | – | 100 % (7/7) | 100 % (8/8) | 100 % (1/1) | 100 % (1/1) | – | 1.0 | 5,951 | 29 s |
 | `ollama-garde-fou` (ollama · qwen3:8b) | 100 % (8/8) | 100 % (7/7) | 100 % (7/7) | 88 % (7/8) | 100 % (8/8) | 100 % (7/7) | 100 % (8/8) | 0 % (0/1) | 100 % (1/1) | 1 | 1.0 | 5,591 | 25 s |
+| `groq-apres` (groq · openai/gpt-oss-120b) | 100 % (8/8) | 100 % (7/7) | 100 % (7/7) | 100 % (8/8) | 100 % (8/8) | 100 % (7/7) | 100 % (8/8) | 100 % (1/1) | 100 % (1/1) | 0 | 2.6 | 22,626 | 125 s |
 
 ## Détail par question
 
@@ -89,4 +90,15 @@ Détail de la couverture (offres visibles / offres réellement au bon endroit) :
 - **Trouve des offres de DevOps ou de platform engineer au Royaume-Uni.** : ✅
 - **Trouve 3 offres en France qui correspondent à mon CV.** : ❌ Aucun lien inventé par le modèle
 - **L'offre « Junior AI Consultant » à Paris correspond-elle à mon profil ?** : ❌ Détail de l'offre lu
+- **Trouve des offres de boulanger à Marseille.** : ✅
+
+### `groq-apres`
+
+- **Trouve des offres de développeur Python en France.** : ✅
+- **Je cherche un poste de data scientist à Paris.** : ✅
+- **Quelles offres de product manager y a-t-il à Berlin ?** : ✅
+- **Trouve des offres de développeur React en télétravail.** : ✅
+- **Trouve des offres de DevOps ou de platform engineer au Royaume-Uni.** : ✅
+- **Trouve 3 offres en France qui correspondent à mon CV.** : ✅
+- **L'offre « Junior AI Consultant » à Paris correspond-elle à mon profil ?** : ✅
 - **Trouve des offres de boulanger à Marseille.** : ✅

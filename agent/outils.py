@@ -268,8 +268,10 @@ SCHEMAS = [
         "function": {
             "name": "search_jobs",
             "description": (
-                "Cherche des offres d'emploi sur Arbeitnow (Europe, dont la France), Remotive "
-                "(télétravail) et Adzuna (France, si configuré). Les offres sont surtout en anglais : privilégie "
+                "Cherche des offres d'emploi sur Arbeitnow (Europe, dont la France) et Remotive (télétravail)"
+                # Adzuna n'est cité que s'il est actif : sinon le modèle dit l'avoir consulté.
+                + (" et Adzuna (France)" if config.ADZUNA_APP_ID and config.ADZUNA_APP_KEY else "")
+                + ". Les offres sont surtout en anglais : privilégie "
                 "des mots-clés en anglais (ex. 'python developer'), et réessaie avec d'autres mots-clés "
                 "si les résultats sont maigres. Renvoie une liste résumée (id, source, lien…) ; "
                 "la description complète s'obtient avec get_job_details."
@@ -302,7 +304,10 @@ SCHEMAS = [
         "type": "function",
         "function": {
             "name": "read_cv",
-            "description": "Renvoie le texte du CV de l'utilisateur, pour comparer ses compétences aux offres.",
+            "description": (
+                "Renvoie le texte du CV de l'utilisateur. À appeler UNIQUEMENT si la demande parle de son profil "
+                "(« pour moi », « mon CV », « qui me correspondent »). Inutile pour une simple recherche d'offres."
+            ),
             "parameters": {"type": "object", "properties": {}},
         },
     },

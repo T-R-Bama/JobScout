@@ -5,7 +5,7 @@ Il décide lui-même quels outils appeler et dans quel ordre. La boucle de l'age
 codée à la main, sans framework : le modèle choisit un outil, le programme l'exécute,
 renvoie le résultat au modèle, et ainsi de suite jusqu'à la réponse finale.
 
-**Démo en ligne : https://jobscout-otytwrguugq34laub2evrt.streamlit.app** (avec un CV d'exemple, ou ton propre CV en PDF)
+**Démo en ligne : https://jobscout-trbama.streamlit.app** (avec un CV d'exemple, ou ton propre CV en PDF)
 
 > Projet en cours de construction. Étape actuelle : agent fonctionnel en ligne de commande et dans une interface web Streamlit, avec démo en ligne, avec une évaluation chiffrée.
 
@@ -61,6 +61,8 @@ Chaque problème rencontré pendant les tests a donné lieu à une correction da
 | Chercher « France » ignorait les offres dont le lieu est seulement « Paris » (77 % des offres françaises invisibles) | Pays déduit du site d'origine, noms de pays en français et en anglais, accents ignorés : trouvé grâce à l'évaluation |
 | `qwen3` fabriquait parfois un lien plausible en mélangeant deux offres | **Garde-fou** : tout lien de la réponse finale qu'aucun outil n'a renvoyé est retiré, avec un avertissement |
 | Le mode « réflexion » de `qwen3` le bloquait parfois 19 minutes pour une réponse vide | Mode réflexion coupé et longueur des réponses plafonnée |
+| Sur la démo, Groq lisait le CV pour une simple recherche (« offres Python en télétravail ») | Consignes qui disent aussi quand **ne pas** lire le CV : 100 % de bonnes décisions sur l'évaluation |
+| L'agent disait avoir cherché sur Adzuna alors qu'Adzuna n'était pas activé | Adzuna n'est cité dans la description de l'outil que s'il est réellement configuré |
 
 ## Évaluation
 
@@ -77,6 +79,11 @@ pertinente trouvée, lieu respecté, aucun lien inventé, source citée, CV lu �
 | Mesure | Sans garde-fou | Avec garde-fou |
 |---|---|---|
 | Réponses sans lien inventé affiché | 88 % | **100 %** |
+
+Avec Groq (`gpt-oss-120b`, le modèle de la démo) et tous les correctifs, l'agent
+réussit **les 8 questions sur toutes les métriques** : offre pertinente trouvée, lieu
+respecté, aucun lien inventé, source citée, CV lu à bon escient (contre 1 fois sur 2
+avant la consigne sur le CV). Coût : environ 22 600 tokens et 2 minutes par question.
 
 Méthode, résultats et enseignements : [evaluation/README.md](evaluation/README.md)
 et [evaluation/RESULTS.md](evaluation/RESULTS.md).
@@ -172,5 +179,6 @@ streamlit_app.py  # interface web
 - [x] Interface Streamlit
 - [x] Démo en ligne (Streamlit Community Cloud)
 - [x] Évaluation chiffrée (outil de recherche + agent complet avec Ollama)
-- [ ] Évaluation complète avec Groq (quota quotidien gratuit)
+- [x] Évaluation complète avec Groq
+- [ ] Capture d'écran de l'interface dans ce README
 - [x] Garde-fou qui vérifie les liens de la réponse finale
