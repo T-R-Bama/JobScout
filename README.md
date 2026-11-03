@@ -62,6 +62,7 @@ Chaque problème rencontré pendant les tests a donné lieu à une correction da
 | `qwen3` fabriquait parfois un lien plausible en mélangeant deux offres | **Garde-fou** : tout lien de la réponse finale qu'aucun outil n'a renvoyé est retiré, avec un avertissement |
 | Le mode « réflexion » de `qwen3` le bloquait parfois 19 minutes pour une réponse vide | Mode réflexion coupé et longueur des réponses plafonnée |
 | Sur la démo, Groq lisait le CV pour une simple recherche (« offres Python en télétravail ») | Consignes qui disent aussi quand **ne pas** lire le CV : 100 % de bonnes décisions sur l'évaluation |
+| Le quota gratuit de Groq, partagé par tous les visiteurs, pouvait rendre la démo muette | Réponses aux exemples gardées en mémoire 6 h, et 3 demandes par visiteur et par jour |
 | L'agent disait avoir cherché sur Adzuna alors qu'Adzuna n'était pas activé | Adzuna n'est cité dans la description de l'outil que s'il est réellement configuré |
 
 ## Évaluation
@@ -136,6 +137,14 @@ Interface web (s'ouvre dans le navigateur) :
 On y choisit le CV : un CV fictif d'exemple, son propre CV en PDF (lu en mémoire, jamais
 enregistré) ou, en local, le CV indiqué dans `.env`. Chaque étape de l'agent (lecture du CV,
 recherches, lecture des offres, liens retirés par le garde-fou) s'affiche pendant qu'il travaille.
+
+Sur la démo en ligne, le quota gratuit de Groq (environ 10 demandes par jour) est partagé
+entre tous les visiteurs. Pour qu'elle reste utilisable :
+- les réponses aux **exemples cliquables** (avec le CV d'exemple) sont gardées en mémoire 6 h
+  et partagées : un visiteur qui clique sur un exemple déjà traité reçoit la réponse
+  instantanément, sans consommer de tokens. Une réponse calculée à partir d'un CV envoyé
+  n'est jamais montrée à un autre visiteur ;
+- chaque visiteur peut envoyer **3 demandes par jour** au modèle (pas de limite en local).
 
 En ligne de commande, poser une question directement :
 ```bash
