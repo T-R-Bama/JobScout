@@ -9,7 +9,10 @@ renvoie le résultat au modèle, et ainsi de suite jusqu'à la réponse finale.
 
 **Démo en ligne : https://jobscout-trbama.streamlit.app** (avec un CV d'exemple, ou ton propre CV en PDF)
 
-> Projet en cours de construction. Étape actuelle : agent fonctionnel en ligne de commande et dans une interface web Streamlit, avec démo en ligne, avec une évaluation chiffrée.
+![L'agent lit le CV, lance ses recherches, lit le détail des offres puis répond avec les vrais liens](docs/capture.png)
+
+*Une vraie demande avec `gpt-oss-120b` : chaque étape de l'agent s'affiche (la 4e recherche
+est refusée par la limite de 3 recherches imposée dans le code), puis la réponse avec les liens réels.*
 
 ## Exemple
 
@@ -234,5 +237,5 @@ streamlit_app.py  # interface web
 - [x] Démo en ligne (Streamlit Community Cloud)
 - [x] Évaluation chiffrée (outil de recherche + agent complet avec Ollama)
 - [x] Évaluation complète avec Groq
-- [ ] Capture d'écran de l'interface dans ce README
+- [x] Capture d'écran de l'interface dans ce README
 - [x] Garde-fou qui vérifie les liens de la réponse finale
