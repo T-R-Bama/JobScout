@@ -114,7 +114,7 @@ et [evaluation/RESULTS.md](evaluation/RESULTS.md).
 
 ## Tests automatiques
 
-48 tests vérifient le code sans appeler de LLM ni les sites d'offres (des offres fictives
+49 tests vérifient le code sans appeler de LLM ni les sites d'offres (des offres fictives
 et un faux modèle les remplacent) : ils durent 3 secondes et tournent sur GitHub à chaque
 envoi de code (badge en haut de page).
 
